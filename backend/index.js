@@ -3,8 +3,12 @@ const app = express();
 require('dotenv').config();
 const connection = require("./config/db");
 const userRoute = require("./routes/userRoute");
+const cors = require('cors');
+
 
 app.use(express.json());
+app.use(cors());
+app.get("/users",userRoute);
 
 
 
@@ -18,3 +22,5 @@ app.listen(process.env.port,async()=>{
     }
     console.log(`Server is running at the port ${process.env.port}`);
 });
+
+// npm i express nodemon dotenv mongoose bcrypt socket.io jsonwebtoken cors env
