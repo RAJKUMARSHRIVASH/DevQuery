@@ -11,14 +11,57 @@ h1{
     margin: 20px 0px;
 }
 
+.google,.github,.facebook{
+    width:30%;
+    margin:auto;
+    display: block;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom: 10px;
+    color:white;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+i{
+    margin-right: 5px;
+}
+
+.google{
+    background-color: #eee;
+    color:black;
+}
+
+.github{
+    background-color: black;
+}
+
+.facebook{
+    background-color: rgb(4, 4, 49);
+    margin-bottom: 30px;
+}
+
+.google:hover{
+    background-color: #eee5e5;
+}
+.github:hover{
+    background-color: rgb(32, 30, 30);
+}
+.facebook:hover{
+    background-color: rgb(6, 6, 92);
+}
+
 .form-container{
     width:30%;
     padding-top:30px;
     padding-bottom:30px;
     margin:auto;
-    border: solid 3px green;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #eee;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
@@ -46,7 +89,8 @@ form input{
 
 @media all and (max-width: 900px) {
       
-   .form-container{
+   .form-container,.google,.github,.facebook{
     width:80%
    }
+ 
 }

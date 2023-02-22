@@ -9,6 +9,9 @@
 </head>
 <body>
     <h1>Login Form</h1>
+    <button class="google"><i class="fa-brands fa-google"></i>Log in with Google</button>
+    <button class="github"><i class="fa-brands fa-github"></i>Log in with GitHub</button>
+    <button class="facebook"><i class="fa-brands fa-square-facebook"></i>Log in with Facebook</button>
     <div class="form-container" >
         <form>
             <input required type="email" id="email" placeholder="Enter your Email">
@@ -29,15 +32,21 @@
             for (let i = 0; i < allInputTags.length; i++) {
                 userObj[allInputTags[i].id] = allInputTags[i].value
             }
-            let login_request = await fetch("http://localhost:8000/login", {
+            let login_request = await fetch("http://localhost:8000/users/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(userObj)
-            }).then((res) => res.json()).then((res) => localStorage.setItem("token", res.token))
-            alert("login successfull")
+            })
+            const res = await login_request.json()
+            console.log(res) 
+            if(res.message == "login successfull"){
+                alert(res.message)
             window.location.href = "../index.html"
+            }else{
+                alert("plz login again")
+            }
             
         } catch (error) {
             console.log(error.message)

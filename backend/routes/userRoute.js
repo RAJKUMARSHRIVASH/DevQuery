@@ -10,7 +10,10 @@ const {authenticate} = require("../middleware/authenticate")
 
 userRoute.post("/register", async (req, res) => {
     const { name,password,email } = req.body;
-  
+    const data = await UserModel.findOne({email})
+    if(data){
+        res.json({"message":"User is already Registered"})
+    }else{
       try {
         bcrypt.hash(password, 5, async(err, hash) => {
           // Store hash in your password DB.
@@ -32,7 +35,9 @@ userRoute.post("/register", async (req, res) => {
         console.log(error.message);
         res.json({"message":"Something went wrong please try again"});
       }
+    }
   });
+
   
   userRoute.post("/login", async (req, res) => {
     const { email, password } = req.body;
@@ -45,7 +50,7 @@ userRoute.post("/register", async (req, res) => {
           if (result) {
             const token=jwt.sign({userID:user[0]._id}, process.env.key)
             res.cookie("token",token)
-            res.json({message:"login sucessfull"})
+            res.json({"message":"login successfull"})
             // res.json({ "message": "login sucessfull","token":token });
           } else {
             res.json({"message":"wrong Credentials"});
