@@ -48,7 +48,7 @@ userRoute.post("/register", async (req, res) => {
       if (user.length > 0) {
         bcrypt.compare(password, user[0].password, (err, result) => {
           if (result) {
-            const token=jwt.sign({userID:user[0]._id}, process.env.key)
+            const token=jwt.sign({userID:user[0]._id, name: user[0].name}, process.env.key)
             res.cookie("token",token)
             res.json({"message":"login successfull"})
             // res.json({ "message": "login sucessfull","token":token });

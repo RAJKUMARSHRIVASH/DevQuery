@@ -10,7 +10,12 @@ quesRoute.get("/", async (req, res) => {
 })
 
 quesRoute.post("/addquestion", async (req, res) => {
-   
+    const {author, question, user_ID} = req.body;
+    try {
+        
+    } catch (error) {
+       console.log(error) 
+    }
 })
 
 
