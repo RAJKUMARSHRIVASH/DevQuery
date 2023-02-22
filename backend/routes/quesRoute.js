@@ -1,6 +1,7 @@
 const express = require("express");
 const quesRoute = express.Router();
 const { QuesModel } = require("../model/questionModel");
+const {authenticate} = require("../middleware/authenticate")
 
 
 quesRoute.get("/", async (req, res) => {
@@ -9,8 +10,13 @@ quesRoute.get("/", async (req, res) => {
     res.send(data)
 })
 
-quesRoute.post("/addquestion", async (req, res) => {
-   
+quesRoute.post("/addquestion",authenticate, async (req, res) => {
+    const {author, question, user_ID} = req.body;
+    try {
+        
+    } catch (error) {
+       console.log(error) 
+    }
 })
 
 
