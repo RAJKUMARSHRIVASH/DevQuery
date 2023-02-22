@@ -3,7 +3,8 @@ require("dotenv").config()
 const fs = require("fs")
 
 const authenticate = (req,res,next)=>{
-    const token = req.cookies.token
+    const token = req.cookies.token;
+    console.log(req.path)
     if(!token){
         res.json("login first")
     }else{
@@ -16,7 +17,9 @@ const authenticate = (req,res,next)=>{
             if(decode){
              const user_ID = decode.userID
                  req.body.userID = user_ID;
-
+                if(req.path == "/addquestion"){
+                    req.body.name = decode.name;
+                }
             //   const userRole = decode.role;
             // //   console.log(userRole)
             //   req.body.userrole = userRole
