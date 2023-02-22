@@ -1,0 +1,326 @@
+@font-face {
+  font-family: "Source Sans Pro Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Source Sans Pro Bold Bold"), local("SourceSans Pro Bold-Bold"),
+    local("Source Sans Pro Bold 700"), local("SourceSans Pro Bold-700"),
+    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-bold-webfont.woff?v=f52ccc0bbce9")
+      format("woff");
+}
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
+    local("Roboto Slab 400"), local("RobotoSlab-400"), local("Roboto Slab"),
+    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-regular-webfont.woff?v=a75088a46d79")
+      format("woff");
+}
+@font-face {
+  font-family: "Roboto Slab Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Slab Bold Bold"), local("RobotoSlab Bold-Bold"),
+    local("Roboto Slab Bold 700"), local("RobotoSlab Bold-700"),
+    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-bold-webfont.woff?v=719d1c709127")
+      format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Sans Pro Regular"), local("SourceSans Pro-Regular"),
+    local("Source Sans Pro 400"), local("SourceSans Pro-400"),
+    local("Source Sans Pro"),
+    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-regular-webfont.woff?v=993db0ec4347")
+      format("woff");
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 10px;
+  color: #242729;
+}
+
+.container {
+  width: 100%;
+  max-width: 126.4rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 3px;
+  transition: all 0.5s;
+  padding: 1.3rem 2.5rem;
+}
+
+.btn-orange {
+  background-color: #f48024;
+  color: #fff;
+}
+
+.btn-dark-blue {
+  background-color: #2b2d6e;
+  color: #fff;
+}
+
+/* top-section */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.containerr {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerr p {
+  font-size: 4rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.containerr p span.typed-text {
+  font-weight: 700;
+  color: #df6d20;
+}
+.containerr p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.containerr p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
+.top-section {
+  background-image: url("https://cdn.sstatic.net/Img/home/illo-hero-full.svg?v=e2018a5f9272");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #ffcf10;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.top-section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 3rem;
+}
+
+.section-title {
+  color: #242729;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 700;
+  font-weight: bold;
+  font-size: 5.5rem;
+  text-align: center;
+  max-width: 100%;
+}
+.section-title span {
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+    sans-serif;
+}
+
+.top-section-para {
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: #242729;
+  max-width: 40rem;
+  font-weight: 400;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.top-section-opts {
+  display: flex;
+}
+
+.btn-developers {
+  background-color: #fff;
+  color: #f48024;
+  border: 1px solid #f48024;
+}
+
+.btn-businesses {
+  background-color: #f48024;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+/*End top-section*/
+
+/* For Developers*/
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #242729;
+}
+
+.section-title {
+  font-size: 3.4rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 700;
+}
+
+.section-line {
+  width: 64px;
+  height: 8px;
+  margin: 3rem auto;
+  border-radius: 100rem;
+  background-color: #f48024;
+}
+
+.section-description {
+  font-size: 1.7rem;
+  max-width: 52.6rem;
+  text-align: center;
+}
+.section-description a {
+  color: #f48024;
+}
+
+.developers .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.developers .option {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 0.7rem;
+}
+.developers .option:nth-child(1),
+.developers .option:nth-child(3) {
+  margin-top: 12rem;
+}
+.developers .option:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09),
+    0 4px 13px rgba(0, 0, 0, 0.13);
+}
+.developers .option-title {
+  color: #242729;
+  font-size: 2.1rem;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+.developers .option-description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  color: #242729;
+}
+.developers .option-description a {
+  color: #f48024;
+}
+.developers .option-button {
+  margin: 3rem 0 2rem;
+}
+.developers .option-link {
+  color: #fff;
+}
+
+/* End For Developers*/
+
+/*For Businesses*/
+
+.for-businesses {
+  background-color: #f7f6f9;
+  padding: 10rem 0;
+}
+.for-businesses .options {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.for-businesses .option {
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 0.7rem;
+}
+.for-businesses .option-description {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-left: 1rem;
+  color: #242729;
+}
+.for-businesses .option-link {
+  color: #f48024;
+}
+
+/* End For Businesses */
