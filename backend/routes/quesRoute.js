@@ -21,6 +21,7 @@ quesRoute.get("/sortbyascending", async (req, res) => {
 
 quesRoute.post("/addquestion",authenticate, async (req, res) => {
     const {name, question, userID} = req.body;
+    console.log("here")
     try {
         const new_question = new QuesModel({
             name,
@@ -28,7 +29,7 @@ quesRoute.post("/addquestion",authenticate, async (req, res) => {
             userID
           });
          await new_question.save();
-         res.send("Question Posted!")
+         res.json(new_question)
     } catch (error) {
        console.log(error) 
     }

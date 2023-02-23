@@ -1,5 +1,4 @@
 let question_div = document.getElementById("question");
-localStorage.setItem("question_id", "63f770317106ebe4aa985271")
 let question_id = localStorage.getItem("question_id");
 
 async function get_question(id){
