@@ -40,8 +40,9 @@
                 body: JSON.stringify(userObj)
             })
             const res = await login_request.json()
-            console.log(res) 
+            
             if(res.message == "login successfull"){
+                localStorage.setItem("token", res.token)
                 alert(res.message)
             window.location.href = "../index.html"
             }else{
