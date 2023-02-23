@@ -66,3 +66,5 @@ sortAsc.addEventListener("click",async()=>{
     Maindiv.innerHTML=""
     renderData(res);
 })
+
+
