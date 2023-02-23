@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 8vh;
+            background-color: rgb(30, 129, 196);
+            position: fixed;
+            top: 0;
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            z-index: 1;
+        }
+
+        #user-body {
+            margin-top: 10vh;
+            width: 75%;
+            margin-left: 20%;
+            /* border: 1px solid; */
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            position: relative;
+        }
+
+        .user-body-filter {
+            /* border: 1px solid; */
+            position: relative;
+        }
+
+        .user-body-filter img {
+            width: 25px;
+            position: absolute;
+            top: 7px;
+            margin-left: 5px;
+        }
+
+        .user-body-filter input {
+            padding: 10px;
+            padding-left: 35px;
+        }
+
+        .user-body-filter input:focus {
+            outline: 1px solid;
+            outline-color: aqua;
+        }
+
+        .user-body-filter input::-webkit-input-placeholder {
+            font-size: medium;
+
+        }
+
+        .user-body-sorting {
+            position: absolute;
+            right: 0;
+
+        }
+
+        .user-body-sorting>div {
+            border: 1px solid rgb(106, 103, 103);
+            border-collapse: collapse;
+            color: rgb(106, 103, 103);
+            padding: 10px;
+
+        }
+
+        .user-body-sorting>div:hover {
+            background-color: rgb(245, 242, 242);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- navbar -->
+        <section class="navbar">Dummy nav bar</section>
+
+        <!-- main body -->
+        <section id="user-body">
+            <h1>Users</h1>
+            <div class="row">
+                <div class="user-body-filter row">
+                    <img src="./imgs/search.png" alt="search">
+                    <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user">
+                </div>
+                <div class="user-body-sorting row">
+                    <div>Reputation</div>
+                    <div>New Users</div>
+                    <div>Voters</div>
+                    <div>Editors</div>
+                    <div>Moderators</div>
+                </div>
+            </div>
+            <div class="user-box">
+                
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
