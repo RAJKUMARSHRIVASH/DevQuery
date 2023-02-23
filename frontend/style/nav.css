@@ -628,4 +628,9 @@ nav {
     font-size: 2.5rem;
   }
 }
+@media screen and (max-width: 360px) {
+  .nav-mini-logo {
+    width: 37px;
+  }
+}
 /* End Media Queries */
