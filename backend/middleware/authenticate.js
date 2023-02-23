@@ -3,8 +3,9 @@ require("dotenv").config()
 const fs = require("fs")
 
 const authenticate = (req,res,next)=>{
-    const token = req.cookies.token;
-    console.log(req.path)
+    // const token = req.cookies.token;
+    const token = req.headers.authorization
+    console.log(token)
     if(!token){
         res.json("login first")
     }else{
@@ -16,6 +17,7 @@ const authenticate = (req,res,next)=>{
             const decode = jwt.verify(token,process.env.key)
             if(decode){
              const user_ID = decode.userID
+             console.log(user_ID)
                  req.body.userID = user_ID;
                 if(req.path == "/addquestion"){
                     req.body.name = decode.name;
