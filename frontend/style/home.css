@@ -31,9 +31,21 @@ a {
     margin-top: -10px
 }
 
+button{
+    background-color:rgb(10, 149, 255);
+    color:white;
+    width:80px;
+    height:30px;
+    border: 0px;
+    margin-right:5px;
+}
+
+button:hover{
+    background-color:rgb(233, 121, 30);
+}
+
 #rightdiv h4 {
     margin-left: 10px;
-
 }
 
 .icons {
@@ -66,9 +78,11 @@ a {
     display: flex;
 }
 
-#table>div {
-    border: 1px solid black;
-    padding: 5px
+#table{
+   
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-evenly;
 }
 
 #renderdata {
@@ -89,10 +103,15 @@ li {
 }
 
 .questions {
-
     margin-left: 40px
 }
 
 .vote {
     margin-left: 20px
+}
+
+.box{
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-evenly;
 }
