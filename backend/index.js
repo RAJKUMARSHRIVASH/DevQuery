@@ -23,7 +23,8 @@ const userRoute = require("./routes/userRoute");
 app.use("/users",userRoute);
 const { quesRoute } = require("./routes/quesRoute")
 app.use("/questions",quesRoute)
-
+const {githubRoute} = require("./githubRoute");
+app.use("/auth",githubRoute)
 
 
 

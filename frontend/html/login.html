@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login page</title>
-    <link rel="stylesheet" href="../css/register-login.css">
+    <link rel="stylesheet" href="../style/register-login.css">
 </head>
 <body>
     <h1>Login Form</h1>
@@ -40,8 +40,9 @@
                 body: JSON.stringify(userObj)
             })
             const res = await login_request.json()
-            console.log(res) 
+            
             if(res.message == "login successfull"){
+                localStorage.setItem("token", res.token)
                 alert(res.message)
             window.location.href = "../index.html"
             }else{

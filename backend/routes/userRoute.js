@@ -50,8 +50,11 @@ userRoute.post("/register", async (req, res) => {
           if (result) {
             const token=jwt.sign({userID:user[0]._id, name: user[0].name}, process.env.key)
             res.cookie("token",token)
-            res.json({"message":"login successful"})
-            // res.json({ "message": "login successful","token":token });
+
+
+            res.json({"message":"login successfull", "token": token})
+            // res.json({ "message": "login sucessfull","token":token });
+
           } else {
             res.json({"message":"wrong Credentials"});
           }

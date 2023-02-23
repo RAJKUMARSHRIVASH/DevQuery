@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 
 const quesSchema = mongoose.Schema({
-    author: {type: String, required:true},
+    name: {type: String, required:true},
     question: {type:Object,required:true},
-    user_ID: {type:String,required:true},
+    userID: {type:String,required:true},
     answer:{type:Array,default:[]},
     posted: {type: Date, default: Date.now}
 });
