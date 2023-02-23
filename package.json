@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "node-fetch": "^2.6.9"
-  }
-}
