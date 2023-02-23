@@ -50,8 +50,11 @@ userRoute.post("/register", async (req, res) => {
           if (result) {
             const token=jwt.sign({userID:user[0]._id, name: user[0].name}, process.env.key)
             res.cookie("token",token)
+
+
             res.json({"message":"login successfull", "token": token})
             // res.json({ "message": "login sucessfull","token":token });
+
           } else {
             res.json({"message":"wrong Credentials"});
           }
@@ -69,11 +72,11 @@ userRoute.post("/register", async (req, res) => {
     const blacklistedData = JSON.parse(fs.readFileSync("./blacklistedData.json","utf-8"))
     blacklistedData.push(token)
     fs.writeFileSync("./blacklistedData.json",JSON.stringify(blacklistedData))
-    res.json("logout successfull")
+    res.json("logout successful")
  })
 
 
-userRoute.get("/getall",authenticate,async(req,res)=>{
+userRoute.get("/getall",async(req,res)=>{
     const all = await UserModel.find()
     res.json(all)
 })

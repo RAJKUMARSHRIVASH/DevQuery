@@ -73,6 +73,7 @@
         .user-body-sorting {
             position: absolute;
             right: 0;
+            border-collapse: collapse;
 
         }
 
@@ -86,6 +87,19 @@
 
         .user-body-sorting>div:hover {
             background-color: rgb(245, 242, 242);
+        }
+
+        .user-box {
+            /* border: 1px solid; */
+            margin-top: 8vh;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px 10px;
+        }
+
+        .user-box>div {
+            border: 1px solid;
+            padding: 10px;
         }
     </style>
 </head>
@@ -113,10 +127,43 @@
                 </div>
             </div>
             <div class="user-box">
-                
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
             </div>
         </section>
     </div>
 </body>
 
 </html>
+<script>
+
+    let baseURL = "http://localhost:8000";
+
+    let getAllUsers = async()=>{
+        try {
+            let fData = await fetch(`${baseURL}/users/getall`);
+            const users = await fData.json();
+            console.log(users)
+        } catch (error) {
+            alert(error)
+        }
+    }
+    getAllUsers();
+
+</script>
