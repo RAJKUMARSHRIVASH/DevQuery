@@ -11,9 +11,15 @@ quesRoute.get("/", async (req, res) => {
 })
 
 quesRoute.post("/addquestion",authenticate, async (req, res) => {
-    const {author, question, user_ID} = req.body;
+    const {name, question, user_ID} = req.body;
     try {
-        
+        const new_question = new QuesModel({
+            name,
+            question,
+            user_ID
+          });
+         await new_question.save();
+         res.send("Question Posted!")
     } catch (error) {
        console.log(error) 
     }
