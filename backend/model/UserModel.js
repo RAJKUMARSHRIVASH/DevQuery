@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
 
-// <<-------------------------Roll based access control System--------------->>
+// <<-------------------------Role based access control System--------------->>
 const userSchema = mongoose.Schema({
-    name:String,
-    email:String,
-    password:String,
-    role :{
-        type : String, enum : ["User","Developer","Admin"], default : "User"
-    }
+    name:{type:String,required:true},
+    email:{type:String,required:true},
+    password:{type:String,required:true},
+    questions:{type:Array,default:[]}
 });
 
 const UserModel = mongoose.model("user",userSchema);

@@ -1,14 +1,28 @@
+            //-----------express-----------//
 const express = require("express");
 const app = express();
-require('dotenv').config();
-const connection = require("./config/db");
-const userRoute = require("./routes/userRoute");
-const cors = require('cors');
-
-
 app.use(express.json());
+
+              //-----------dotenv-----------//
+require('dotenv').config();
+
+            //------------connection-----------//
+const connection = require("./config/db");
+
+             //------------cookie-parser------------//
+const cookieParser = require("cookie-parser")  
+app.use(cookieParser())           
+
+            //----------cors-----------//
+const cors = require('cors');
 app.use(cors());
-app.get("/users",userRoute);
+
+
+            //-----------routes----------//
+const userRoute = require("./routes/userRoute");
+app.use("/users",userRoute);
+const { quesRoute } = require("./routes/quesRoute")
+app.use("/questions",quesRoute)
 
 
 
@@ -23,4 +37,3 @@ app.listen(process.env.port,async()=>{
     console.log(`Server is running at the port ${process.env.port}`);
 });
 
-// npm i express nodemon dotenv mongoose bcrypt socket.io jsonwebtoken cors env moment

@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    margin-right: 15px
+}
+
+#home {
+    display: flex;
+    padding: 5%
+}
+
+#rightdiv {
+    background-color: rgb(251, 243, 213);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 5px;
+    height: 100%;
+    margin-left: 0px
+}
+
+#askques {
+    background-color: rgb(10, 149, 255);
+    color: white;
+    border: 0px;
+    width: 100px;
+    height: 40px;
+    border-radius: 2px;
+    margin-top: -10px
+}
+
+#rightdiv h4 {
+    margin-left: 10px;
+
+}
+
+.icons {
+    display: flex;
+}
+
+#sidebyside {
+    display: flex;
+    justify-content: space-between;
+}
+
+#table {
+    display: flex;
+    margin-left: 400px
+}
+
+.icons img {
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 7px
+}
+
+#leftdiv {
+    position: fixed;
+    /* border: 1px solid black; */
+    width: 14%
+}
+
+#sidebyside {
+    display: flex;
+}
+
+#table>div {
+    border: 1px solid black;
+    padding: 5px
+}
+
+#renderdata {
+    width: 60%;
+    /* border: 1px solid black; */
+    margin-right: 30px;
+    margin-left: 160px
+}
+
+li {
+    margin-left: -10px;
+    margin-bottom: 5px
+}
+
+.qtab {
+    display: flex;
+    /* border: 1px solid black; */
+}
+
+.questions {
+
+    margin-left: 40px
+}
+
+.vote {
+    margin-left: 20px
+}
