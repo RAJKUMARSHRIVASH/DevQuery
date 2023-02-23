@@ -8,11 +8,6 @@ quesRoute.get("/", async (req, res) => {
     let data = await QuesModel.find()
     res.send(data)
 })
-quesRoute.get("/:id", async (req, res) => {
-    let q = req.params.id
-    let data = await QuesModel.findById(q)
-    res.send(data)
-})
 
 quesRoute.get("/sortbydescending", async (req, res) => {
     let data = await QuesModel.find().sort({posted:-1})
@@ -38,6 +33,7 @@ quesRoute.post("/addquestion",authenticate, async (req, res) => {
        console.log(error) 
     }
 })
+
 quesRoute.post("/addans",authenticate, async (req, res) => {
     const quesID = req.params.id;
     const {name,answer, user_ID} = req.body;
@@ -53,6 +49,14 @@ quesRoute.post("/addans",authenticate, async (req, res) => {
        console.log(error) 
     }
 })
+
+
+quesRoute.get("/:id", async (req, res) => {
+    let q = req.params.id
+    let data = await QuesModel.findById(q)
+    res.send(data)
+})
+
 
 
 
