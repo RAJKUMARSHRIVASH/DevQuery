@@ -75,7 +75,8 @@ document.querySelector("form").addEventListener("submit", async (e)=>{
             })
             const res = await post_question.json()
             if(res._id){
-                localStorage.setItem("question_id", res._id)
+                localStorage.setItem("question_id", res._id);
+                location.assign("questions.html")
             }
     } catch (error) {
         console.log(error)

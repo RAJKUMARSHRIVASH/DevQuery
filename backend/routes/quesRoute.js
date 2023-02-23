@@ -21,7 +21,6 @@ quesRoute.get("/sortbyascending", async (req, res) => {
 
 quesRoute.post("/addquestion",authenticate, async (req, res) => {
     const {name, question, userID} = req.body;
-    console.log("here")
     try {
         const new_question = new QuesModel({
             name,
@@ -35,17 +34,15 @@ quesRoute.post("/addquestion",authenticate, async (req, res) => {
     }
 })
 
-quesRoute.post("/addans",authenticate, async (req, res) => {
+quesRoute.post("/addans/:id",authenticate, async (req, res) => {
     const quesID = req.params.id;
-    const {name,answer, user_ID} = req.body;
+    const {name, answer, userID, questionaskerID} = req.body;
+    if(userID == questionaskerID){
+        res.json({"mas": "You cann't answer your own questions"})
+    }
     try {
-        const new_question = new QuesModel({
-            name,
-            question,
-            user_ID
-          });
-         await new_question.save();
-         res.send("Question Posted!")
+        const add_ans = await QuesModel.updateOne({ "_id": quesID}, {$push: {"answer": {name, answer, userID}}})
+        res.json(add_ans)
     } catch (error) {
        console.log(error) 
     }
