@@ -11,7 +11,7 @@ let navbar = () => {
             <div class="ham-line"></div>
           </div>
           <div class="navbar-dropdown-menu">
-            <a href="#" class="cur-link">Home</a>
+            <a href="#" class="nav-link">Home</a>
             <h5>Public</h5>
             <ul class="nav-ul">
               <li class="nav-item">
