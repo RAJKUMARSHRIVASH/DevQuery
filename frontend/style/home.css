@@ -1,8 +1,16 @@
-body {
+body{
+    background-color:whitesmoke
+}
+
+
+#home p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* background-color: #f3dddd; */
 }
 
+#renderdata p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 a {
     text-decoration: none;
     color: black;
@@ -18,8 +26,10 @@ a {
     background-color: rgb(251, 243, 213);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius: 5px;
-    height: 100%;
-    margin-left: 0px
+    height: 80%;
+    margin-left: 0px;
+    position: fixed;
+    margin-left:900px
 }
 
 #askques {
@@ -41,7 +51,8 @@ button {
     margin-right: 5px;
 }
 
-button:hover {
+button:hover,#askques:hover
+ {
     background-color: rgb(233, 121, 30);
 }
 
@@ -73,13 +84,31 @@ button:hover {
 
 #leftdiv {
     position: fixed;
-    width: 14%
+    width: 13%;
+    /* border:1px solid black; */
+    margin-left:-40px;
+    padding:5px;
+    background-color: rgb(251, 243, 213);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 5px;
 }
 
 #table,
 .box {
     display: flex;
     justify-content: space-evenly;
+    /* border:1px solid black */
+}
+
+.abox{
+    /* border:1px solid rgb(224, 16, 16); */
+    width:30%;
+    text-align: center;
+}
+
+.qbox{
+    /* border:1px solid black; */
+    width:70%
 }
 
 #renderdata {
