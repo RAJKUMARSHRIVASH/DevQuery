@@ -18,7 +18,7 @@ function renderQuestion(question){
     let h1 = document.createElement("h1");
     h1.innerText = question.question.heading;
     let p = document.createElement("p");
-    p.innerText = question.question.discreption;
+    p.innerHTML = question.question.innerhtml;
     let posted = document.createElement("p");
     let date = new Date(question.posted)
     posted.innerText = `posted: ${date.toLocaleString()}`;

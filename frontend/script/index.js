@@ -1,51 +1,13 @@
-/*NavBar import*/
-import { navbar, footer } from "../components/nav.js";
-
-let navbarContainer = document.getElementById("NAVBAR");
-navbarContainer.innerHTML = navbar();
-
-let footercontainer = document.getElementById("FOOTER");
-footercontainer.innerHTML = footer();
-
-/*Hamburger Menu */
-var hamburger_menu = document.querySelector(".hamburger");
-var button = hamburger_menu.querySelector(".hamburger-menu");
-button.addEventListener("click", (event) => {
-  hamburger_menu.classList.toggle("open");
-});
-
-/* Nav Search Hints */
-var nav_search = document.querySelector(".navbar-search");
-var search = nav_search.querySelector(".searchbox");
-var search_hint = nav_search.querySelector(".searchbox-hints");
-var search_btn = document.querySelector(".search-btn");
-var search_input = search.querySelector("input");
-
-search.addEventListener("click", () => {
-  search_hint.classList.add("open");
-});
-
-window.addEventListener("click", function (e) {
-  if (!(nav_search.contains(e.target) || search_btn.contains(e.target))) {
-    search_hint.classList.remove("open");
-  }
-});
-
-search_btn.addEventListener("click", () => {
-  if (!nav_search.classList.contains("open")) {
-    search_hint.classList.remove("open");
-  }
-  nav_search.classList.toggle("open");
-  search_input.focus();
-  setTimeout(() => {
-    search_hint.classList.toggle("open");
-  }, 50);
-});
-
-/*you should write (type="module") in script in index.html page*/
-/*^^^^^^^^^ copy the above code for navbar ^^^^^^^^^^*/
-/*^^^^^^^^^ copy the above code for navbar ^^^^^^^^^^*/
-/*^^^^^^^^^ copy the above code for navbar ^^^^^^^^^^*/
+window.onload = ()=>{
+  document.getElementById("in_nav_icon").href = "./index.html"
+  document.getElementById("in_logo").src = "./favicon/DevQuery.logo.png"
+  document.getElementById("in_mini_logo").src = "./favicon/mini.logo.png"
+  document.getElementById("in_quetions").href = "./html/home.html"
+  document.getElementById("in_ask").href = "./html/ask.html"
+  document.getElementById("id_askbtn").href = "./html/ask.html"
+  document.getElementById("in_login").href = "./html/login.html"
+  document.getElementById("in_signup").href = "./html/register.html"
+}
 
 /*text changing*/
 
