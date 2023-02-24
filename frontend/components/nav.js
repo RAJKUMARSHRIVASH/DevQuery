@@ -11,7 +11,7 @@ let navbar = () => {
             <div class="ham-line"></div>
           </div>
           <div class="navbar-dropdown-menu">
-            <a href="#" class="cur-link">Home</a>
+            <a href="#" class="nav-link">Home</a>
             <h5>Public</h5>
             <ul class="nav-ul">
               <li class="nav-item">
@@ -42,23 +42,25 @@ let navbar = () => {
           </div>
         </div>
 
-        <a href="#" class="nav-icon">
+        <a href="../index.html" id="in_nav_icon" class="nav-icon">
           <img
             class="navbar-logo"
-            src="./favicon/DevQuery.logo.png"
+            src="../favicon/DevQuery.logo.png"
             alt="logo"
+            id="in_logo"
           />
           <img class="nav-mini-logo"
-            src="./favicon/mini.logo.png"
+            src="../favicon/mini.logo.png"
             alt="logo"
+            id="in_mini_logo"
           />
         </a>
       </div>
       <div class="nav-links">
         <ul>
           <li><a href="#">About</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">For Teams</a></li>
+          <li><a href="../html/home.html" id="in_quetions">Quetions</a></li>
+          <li><a href="../html/ask.html" id="in_ask">Ask</a></li>
         </ul>
       </div>
       <div class="navbar-search">
@@ -93,7 +95,7 @@ let navbar = () => {
             </div>
           </div>
           <div class="searchbox-footer">
-            <a href="#" class="btn">Ask a question</a>
+            <a href="../html/ask.html" class="btn" id="id_askbtn">Ask a question</a>
             <a href="#" class="search-help">Search help</a>
           </div>
         </div>

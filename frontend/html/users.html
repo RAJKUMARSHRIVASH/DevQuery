@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="../favicon/mini.logo.png" />
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="../style/nav.css" />
+    <!----------------------------- navbar css --------------------------------->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* left div added from HOMEPAGE */
+        /* Edit as per your needs */
+        #leftdiv {
+            margin-top: -300px;
+            margin-left: 30px
+            
+        }
+
+        #leftdiv a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #leftdiv ul a {
+            margin-left: -20px
+        }
+
+        /* --------------------- */
+        .cntnr {
+            width: 100%;
+            height: 100vh;
+            font-weight: normal;
+            font-size: small;
+        }
+
+        #user-body {
+            margin-top: 10vh;
+            width: 75%;
+            margin-left: 20%;
+            /* border: 1px solid; */
+            /* font-size: small; */
+        }
+
+        #user-body>h1 {
+           margin-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            position: relative;
+        }
+
+        .user-body-filter {
+            /* border: 1px solid; */
+            position: relative;
+        }
+
+        .user-body-filter img {
+            width: 25px;
+            position: absolute;
+            top: 7px;
+            margin-left: 5px;
+        }
+
+        .user-body-filter input {
+            padding: 10px;
+            padding-left: 35px;
+        }
+
+        .user-body-filter input:focus {
+            outline: 1px solid;
+            outline-color: aqua;
+        }
+
+        .user-body-filter input::-webkit-input-placeholder {
+            font-size: medium;
+
+        }
+
+        .user-body-sorting {
+            position: absolute;
+            right: 0;
+            border-collapse: collapse;
+
+        }
+
+        .user-body-sorting>div {
+            border: 1px solid rgb(106, 103, 103);
+            border-collapse: collapse;
+            color: rgb(106, 103, 103);
+            padding: 10px;
+            cursor: pointer;
+
+        }
+
+        .user-body-sorting>div:hover {
+            background-color: rgb(245, 242, 242);
+        }
+
+        .user-box {
+            /* border: 1px solid; */
+            margin-top: 8vh;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px 10px;
+        }
+
+        .user-box>div {
+            /* border: 1px solid; */
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .user-box>div:hover {
+            transform: scale(1.028);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            cursor: pointer;
+        }
+
+        .user-box>div img {
+            width: 50px;
+
+        }
+
+        .user-box>div>div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+        }
+
+        /* for medium / tab screen size */
+        @media screen and (min-width : 481px) and (max-width : 800px) {
+
+            #user-body {
+                width: 80%;
+                margin-left: 10%;
+            }
+
+            .first {
+                flex-wrap: wrap;
+                right: 2px;
+                white-space: nowrap;
+            }
+
+            .user-body-sorting {
+                position: absolute;
+
+            }
+
+            .user-body-sorting>div {
+                padding: 5px;
+                /* font-size: medium; */
+
+            }
+
+            .user-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* for mobile / small screen size and lower */
+        @media screen and (min-width : 0px) and (max-width : 480px) {
+
+            #user-body {
+                width: 80%;
+                margin-left: 8%;
+            }
+
+            .first {
+                flex-wrap: wrap;
+                gap: 5px;
+                white-space: nowrap;
+            }
+
+            .user-body-sorting {
+                position: static;
+
+            }
+
+            .user-body-sorting>div {
+                padding: 5px;
+                font-size: small;
+
+            }
+
+            .user-box {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="NAVBAR">
+        <!-- navbar here "Copy this div" -->
+    </div>
+    <div class="cntnr">
+
+        <!-- main body -->
+        <section id="user-body">
+            <h1>Users</h1>
+            <div class="row first">
+                <div class="user-body-filter row">
+                    <img src="../imgs/search.png" alt="search">
+                    <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user"
+                        oninput="search()">
+                </div>
+                <div class="user-body-sorting row">
+                    <div>Reputation</div>
+                    <div>New Users</div>
+                    <div>Voters</div>
+                    <div>Editors</div>
+                    <div>Moderators</div>
+                </div>
+            </div>
+            <div class="user-box"></div>
+        </section>
+
+        <!-- ---------------------
+        left div added from Homepage -->
+
+        <div id="leftdiv">
+            <a href="#home">Home</a>
+            <div>
+                <p>PUBLIC</p>
+                <ul style="list-style-type:none;">
+                    <li><a href="">Questions</a>
+                    </li>
+                    <li><a href="">Tags</a>
+                    </li>
+                    <li><a href="../html/users.html">Users</a>
+                    </li>
+                    <li><a href="">Companies</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p>COLLECTIVES</p>
+                <a href="">Explore Collectives</a>
+            </div>
+            <div>
+                <p>TEAMS</p>
+                <a href="">Create free team</a>
+            </div>
+        </div>
+
+        <!-- ---------------------- -->
+    </div>
+    <div id="FOOTER">
+        <!-- footer here copy this div -->
+    </div>
+</body>
+
+</html>
+<script type="module" src="../script/navbar.js"></script>
+<script>
+
+    let baseURL = "http://localhost:8000";
+
+    let getAllUsers = async () => {
+        try {
+            let fData = await fetch(`${baseURL}/users/getall`);
+            const users = await fData.json();
+            // console.log(users)
+
+            let basket = document.querySelector(".user-box");
+
+            for (const user of users) {
+                let div1 = document.createElement("div");
+                let div2 = document.createElement("div");
+
+                let img = document.createElement("img");
+                img.src = "../imgs/profile.png";
+
+                let name = document.createElement("h3");
+                name.innerText = user.name;
+
+                let email = document.createElement("p");
+                email.innerText = user.email;
+
+                div2.append(name, email);
+                div1.append(img, div2);
+
+                basket.append(div1);
+            }
+
+        } catch (error) {
+            alert(error)
+        }
+    }
+    getAllUsers();
+
+
+    async function search() {
+        try {
+            let fData = await fetch(`${baseURL}/users/getall`);
+            const users = await fData.json();
+
+            let word = document.querySelector(".user-body-filter-searchbox").value;
+
+            let basket = document.querySelector(".user-box");
+
+            // for (const user of users) {
+            //     if(users.includes(word)){
+            //         basket.innerHTML = "";
+            //         let div1 = document.createElement("div");
+            //         let div2 = document.createElement("div");
+
+            //         let img = document.createElement("img");
+            //         img.src = "./imgs/profile.png";
+
+            //         let name = document.createElement("h3");
+            //         name.innerText = user.name;
+
+            //         let email = document.createElement("p");
+            //         email.innerText = user.email;
+
+            //         div2.append(name, email);
+            //         div1.append(img, div2);
+
+            //         basket.append(div1);
+            //     }
+            // }
+
+        } catch (error) {
+            alert(error)
+        }
+    }
+
+</script>

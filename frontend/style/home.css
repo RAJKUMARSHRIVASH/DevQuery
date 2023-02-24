@@ -1,5 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #f3dddd; */
 }
 
 a {
@@ -31,24 +32,26 @@ a {
     margin-top: -10px
 }
 
-button{
-    background-color:rgb(10, 149, 255);
-    color:white;
-    width:80px;
-    height:30px;
+button {
+    background-color: rgb(10, 149, 255);
+    color: white;
+    width: 80px;
+    height: 30px;
     border: 0px;
-    margin-right:5px;
+    margin-right: 5px;
 }
 
-button:hover{
-    background-color:rgb(233, 121, 30);
+button:hover {
+    background-color: rgb(233, 121, 30);
 }
 
 #rightdiv h4 {
     margin-left: 10px;
 }
 
-.icons {
+.icons,
+#sidebyside,
+.qtab {
     display: flex;
 }
 
@@ -70,24 +73,17 @@ button:hover{
 
 #leftdiv {
     position: fixed;
-    /* border: 1px solid black; */
     width: 14%
 }
 
-#sidebyside {
+#table,
+.box {
     display: flex;
-}
-
-#table{
-   
-    display: flex;
-    /* border: 1px solid black; */
     justify-content: space-evenly;
 }
 
 #renderdata {
     width: 60%;
-    /* border: 1px solid black; */
     margin-right: 30px;
     margin-left: 160px
 }
@@ -95,11 +91,6 @@ button:hover{
 li {
     margin-left: -10px;
     margin-bottom: 5px
-}
-
-.qtab {
-    display: flex;
-    /* border: 1px solid black; */
 }
 
 .questions {
@@ -110,8 +101,6 @@ li {
     margin-left: 20px
 }
 
-.box{
-    display: flex;
-    /* border: 1px solid black; */
-    justify-content: space-evenly;
+.heading:hover {
+    cursor: pointer
 }

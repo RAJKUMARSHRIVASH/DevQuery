@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevQuery - Where Developers share their knowledge</title>
-    <link rel="stylesheet" href="../style/home.css">
-    <link rel="shortcut icon" href="../favicon/mini.logo.png" />
+    <title>Document</title>
+    
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="../style/nav.css" />
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="../style/questions.css">
 </head>
-
 <body>
-    <!-- here comes the navbar -->
     <div id="NAVBAR">
-
+        <!-- navbar here "Copy this div" -->
     </div>
     <div id="home">
         <div id="leftdiv">
-            <a href="#home">Home</a>
+            <a id="home_link" href="../html/home.html">Home</a>
             <div>
                 <p>PUBLIC</p>
                 <ul style="list-style-type:none;">
@@ -40,32 +40,10 @@
                 <a href="">Create free team</a>
             </div>
         </div>
-
-        
-
         <div id="renderdata">
-            <div id="heading">
-                <div id="sidebyside">
-                    <p style="font-size:30px;margin-top:-10px">Top Questions</p>
-                    <button id="askques">Ask Question</button>
-                </div>
-
-                <div id="table">
-                    <button id="latest">Latest</button>
-                    <button id="old">Old</button>
-                    <button id="hot">Hot</button>
-                </div>
-            </div>
-            <br>
-            <hr>
-            <div id="renderhere">
-               
-
-            </div>
+            <div id="question"></div>
+            <div id="ans"></div>
         </div>
-
-
-
         <div id="rightdiv">
 
             <div>
@@ -143,16 +121,6 @@
                     </div>
                 </div>
 
-                <div class="icons">
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZuF-mnckApI8bEfsbFBxycvvJSDxFuNn923uiK7W5ww&s"
-                            alt="">
-                    </div>
-                    <div>
-                        <a>Temporary policy: ChatGPT is banned</a><br> <br>
-                    </div>
-                </div>
-
             </div>
 
             <div id="custom">
@@ -172,12 +140,10 @@
             </div>
         </div>
     </div>
-
-
+    <div id="FOOTER">
+        <!-- footer here copy this div -->
+    </div>
+    <script type="module" src="../script/navbar.js"></script>
+    <script src="../script/questions.js"></script>
 </body>
-
 </html>
-
-
-<script src="../script/home.js"></script>
-<script src="../components/nav.js"></script>
