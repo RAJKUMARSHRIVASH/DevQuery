@@ -21,6 +21,14 @@
     <!----------------------------- navbar css --------------------------------->
   </head>
   <body>
+    <div style="scrollbar-width: none;" id="preloader">
+      <i class="preloader-icon fa fa-spinner"></i>
+    </div>
+
+    <div class="loaded">
+      <!-- Your page content here -->
+    </div>
+
     <div id="NAVBAR">
       <!-- navbar here "Copy this div" -->
     </div>
@@ -425,7 +433,9 @@
                 Accept the answer which solved your problem to let others
                 benefit from the valuable information.
               </h4>
-              <a href="./html/register.html" class="btn btn-orange question-item-content-btn"
+              <a
+                href="./html/register.html"
+                class="btn btn-orange question-item-content-btn"
                 >Create an account</a
               >
             </div>
@@ -581,6 +591,16 @@
     <div id="FOOTER">
       <!-- footer here copy this div -->
     </div>
+    
+    <script>
+      // Hide the preloader when the page is loaded
+      window.addEventListener('load', () => {
+        document.querySelector('body').classList.add('loaded');
+      });
+    </script>
+    <noscript>
+      document.body.style.overflow = "unset";
+    </noscript>
     <script type="module" src="./script/navbar.js"></script>
     <script type="module" src="./script/index.js"></script>
   </body>

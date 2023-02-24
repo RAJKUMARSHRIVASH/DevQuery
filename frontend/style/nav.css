@@ -35,6 +35,27 @@
     url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-regular-webfont.woff?v=993db0ec4347")
       format("woff");
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #f48024 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #f48024;
+    border-radius: 26px;
+    border: 3px solid #ffffff;
+  }
 *,
 *::before,
 *::after {
