@@ -2,6 +2,7 @@ const express = require("express");
 const githubRoute = express.Router();
 const fetch = require("node-fetch")
 require("dotenv").config()
+
 //---------body-parser------//
 const bodyparser = require("body-parser")
 githubRoute.use(bodyparser.urlencoded({
@@ -11,12 +12,10 @@ githubRoute.use(bodyparser.urlencoded({
 
 const path = require("path");
 const mainfolder = path.join(__dirname,"../")
- githubRoute.use(express.static(mainfolder))
-//  console.log(mainfolder)
-
+githubRoute.use(express.static(mainfolder+"/frontend"))
 githubRoute.get("/login",(req, res) => {
-  res.sendFile(mainfolder+"./frontend/html/register.html")
- 
+  res.sendFile(mainfolder+"/frontend/register.html")
+
 })
 
 
@@ -47,11 +46,11 @@ githubRoute.get("/github",async (req, res) => {
         Authorization: `Bearer ${accessToken.access_token}`
     }
 }).then((res) => res.json())
-console.log(userDetails.login)
-  res.cookie("data",userDetails.login)
-   res.json("login successfull")
+  console.log(userDetails.name)
+  res.redirect("http://localhost:8000/auth/index.html")
   
 })
+
 
 // githubRoute.get("/data",(req,res)=>{
 //   const data = req.cookies.data
