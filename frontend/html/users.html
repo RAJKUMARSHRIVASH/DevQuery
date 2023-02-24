@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <link rel="shortcut icon" href="../favicon/mini.logo.png" />
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="../style/nav.css" />
+    <!----------------------------- navbar css --------------------------------->
+
     <style>
         body {
             margin: 0;
@@ -24,26 +29,14 @@
             color: black;
         }
 
-        ul a{
-            margin-left:-20px
+        ul a {
+            margin-left: -20px
         }
 
         /* --------------------- */
         .container {
             width: 100%;
             height: 100vh;
-        }
-
-        .navbar {
-            width: 100%;
-            height: 8vh;
-            background-color: rgb(30, 129, 196);
-            position: fixed;
-            top: 0;
-            text-align: center;
-            color: white;
-            font-size: 40px;
-            z-index: 1;
         }
 
         #user-body {
@@ -136,9 +129,8 @@
             width: 50px;
 
         }
-        .user-box>div>div {
-            
-        }
+
+        .user-box>div>div {}
 
         /* for medium / tab screen size */
         @media screen and (min-width : 481px) and (max-width : 800px) {
@@ -199,23 +191,23 @@
                 grid-template-columns: repeat(1, 1fr);
             }
         }
-        
     </style>
 </head>
 
 <body>
+    <div id="NAVBAR">
+        <!-- navbar here "Copy this div" -->
+    </div>
     <div class="container">
-
-        <!-- navbar -->
-        <section class="navbar">Dummy nav bar</section>
 
         <!-- main body -->
         <section id="user-body">
             <h1>Users</h1>
             <div class="row first">
                 <div class="user-body-filter row">
-                    <img src="./imgs/search.png" alt="search">
-                    <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user" oninput="search()">
+                    <img src="../imgs/search.png" alt="search">
+                    <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user"
+                        oninput="search()">
                 </div>
                 <div class="user-body-sorting row">
                     <div>Reputation</div>
@@ -240,7 +232,7 @@
                     </li>
                     <li><a href="">Tags</a>
                     </li>
-                    <li><a href="../users.html">Users</a>
+                    <li><a href="../html/users.html">Users</a>
                     </li>
                     <li><a href="">Companies</a>
                     </li>
@@ -258,9 +250,13 @@
 
         <!-- ---------------------- -->
     </div>
+    <div id="FOOTER">
+        <!-- footer here copy this div -->
+    </div>
 </body>
 
 </html>
+<script type="module" src="../script/navbar.js"></script>
 <script>
 
     let baseURL = "http://localhost:8000";
@@ -278,7 +274,7 @@
                 let div2 = document.createElement("div");
 
                 let img = document.createElement("img");
-                img.src = "./imgs/profile.png";
+                img.src = "../imgs/profile.png";
 
                 let name = document.createElement("h3");
                 name.innerText = user.name;
@@ -299,7 +295,7 @@
     getAllUsers();
 
 
-    async function search(){
+    async function search() {
         try {
             let fData = await fetch(`${baseURL}/users/getall`);
             const users = await fData.json();
@@ -313,19 +309,19 @@
             //         basket.innerHTML = "";
             //         let div1 = document.createElement("div");
             //         let div2 = document.createElement("div");
-    
+
             //         let img = document.createElement("img");
             //         img.src = "./imgs/profile.png";
-    
+
             //         let name = document.createElement("h3");
             //         name.innerText = user.name;
-    
+
             //         let email = document.createElement("p");
             //         email.innerText = user.email;
-    
+
             //         div2.append(name, email);
             //         div1.append(img, div2);
-    
+
             //         basket.append(div1);
             //     }
             // }
