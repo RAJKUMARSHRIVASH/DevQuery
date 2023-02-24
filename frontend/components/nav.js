@@ -42,23 +42,25 @@ let navbar = () => {
           </div>
         </div>
 
-        <a href="#" class="nav-icon">
+        <a href="../index.html" id="in_nav_icon" class="nav-icon">
           <img
             class="navbar-logo"
-            src="./favicon/DevQuery.logo.png"
+            src="../favicon/DevQuery.logo.png"
             alt="logo"
+            id="in_logo"
           />
           <img class="nav-mini-logo"
-            src="./favicon/mini.logo.png"
+            src="../favicon/mini.logo.png"
             alt="logo"
+            id="in_mini_logo"
           />
         </a>
       </div>
       <div class="nav-links">
         <ul>
           <li><a href="#">About</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">For Teams</a></li>
+          <li><a href="../html/home.html" id="in_quetions">Quetions</a></li>
+          <li><a href="../html/ask.html" id="in_ask">Ask</a></li>
         </ul>
       </div>
       <div class="navbar-search">
@@ -93,7 +95,7 @@ let navbar = () => {
             </div>
           </div>
           <div class="searchbox-footer">
-            <a href="#" class="btn">Ask a question</a>
+            <a href="../html/ask.html" class="btn" id="id_askbtn">Ask a question</a>
             <a href="#" class="search-help">Search help</a>
           </div>
         </div>
@@ -103,8 +105,8 @@ let navbar = () => {
           <i class="fas fa-search"></i>
         </div>
 
-        <a href="#" class="btn btn-login">Log in</a>
-        <a href="#" class="btn btn-register">Sign up</a>
+        <a href="../html/login.html" class="btn btn-login" id="in_login">Log in</a>
+        <a href="../html/register.html" class="btn btn-register" id="in_signup">Sign up</a>
       </div>
     </nav>
   </div>
