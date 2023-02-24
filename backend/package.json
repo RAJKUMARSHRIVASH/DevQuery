@@ -21,6 +21,9 @@
     "mongoose": "^6.9.2",
     "node-fetch": "^2.6.9",
     "nodemon": "^2.0.20",
-    "socket.io": "^4.6.1"
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
+    "socket.io": "^4.6.1",
+    "uuid": "^9.0.0"
   }
 }

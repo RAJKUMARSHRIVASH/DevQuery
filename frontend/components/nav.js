@@ -103,8 +103,8 @@ let navbar = () => {
           <i class="fas fa-search"></i>
         </div>
 
-        <a href="#" class="btn btn-login">Log in</a>
-        <a href="#" class="btn btn-register">Sign up</a>
+        <a href="./login.html" class="btn btn-login">Log in</a>
+        <a href="./register.html" class="btn btn-register">Sign up</a>
       </div>
     </nav>
   </div>
