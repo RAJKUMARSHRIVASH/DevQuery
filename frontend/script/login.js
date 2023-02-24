@@ -18,7 +18,8 @@ let loginForm = document.querySelector("form")
             console.log(res) 
             if(res.message == "login successfull"){
                 alert(res.message)
-            window.location.href = "./index.html"
+                localStorage.setItem("token", res.token)
+            window.location.href = "./home.html"
             }else{
                 alert("plz login again")
             }
