@@ -5,6 +5,7 @@ async function get_question(id){
     try {
         let question = await fetch(`http://localhost:8000/questions/${id}`);
         let res = await question.json();
+        console.log(res)
         renderQuestion(res)
     } catch (error) {
         console.log(error)
@@ -23,6 +24,11 @@ function renderQuestion(question){
     posted.innerText = `posted: ${date.toLocaleString()}`;
     question_div.append(name, h1, p, posted)
 
+    question.answer.forEach((el)=>{
+        let p = document.createElement("p");
+        p.innerText = el.answer;
+        document.getElementById("question").append(p)
+    })
 }
 
 get_question(question_id)

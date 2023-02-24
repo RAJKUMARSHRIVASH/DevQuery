@@ -7,8 +7,14 @@
     <title>Ask Question</title>
     <link rel="stylesheet" href="./style/ask.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+        <!----------------------------- navbar css --------------------------------->
+        <link rel="stylesheet" href="./style/nav.css" />
+        <!----------------------------- navbar css --------------------------------->
 </head>
 <body>
+    <div id="NAVBAR">
+        <!-- navbar here "Copy this div" -->
+      </div>
     <div id="ask">
         <h1>Ask a public question</h1>
         <form action="">
@@ -26,8 +32,11 @@
             </div>
         </form>
     </div>
+    <div id="FOOTER">
+        <!-- footer here copy this div -->
+    </div>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="./script/ask.js"></script>
+    <script type="module" src="./script/ask.js"></script>
     <script>
         var quill = new Quill('#editor-container', {
   modules: {
@@ -44,10 +53,15 @@
 document.querySelector("form").addEventListener("submit", async (e)=>{
     e.preventDefault()
     let heading = document.getElementById("heading").value;
-    let discreption = quill.root.innerHTML;
+    let innerhtml = quill.root.innerHTML;
+    let discreption = quill.root.innerText;
+    discreption = discreption.replace(/[\r\n]\s*[\r\n]/g, ' ');
+    discreption = discreption.slice(0, 130);
+    discreption += "..."
     let qObj = {
         heading,
-        discreption
+        discreption,
+        innerhtml
     }
     let token = localStorage.getItem("token")
     try {
@@ -61,7 +75,8 @@ document.querySelector("form").addEventListener("submit", async (e)=>{
             })
             const res = await post_question.json()
             if(res._id){
-                localStorage.setItem("question_id", res._id)
+                localStorage.setItem("question_id", res._id);
+                location.assign("questions.html")
             }
     } catch (error) {
         console.log(error)
