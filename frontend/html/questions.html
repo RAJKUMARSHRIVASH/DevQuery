@@ -42,107 +42,13 @@
         </div>
         <div id="renderdata">
             <div id="question"></div>
+            <div id="ans_count"></div>
             <div id="ans"></div>
             <div class="answerbox">
                 <h3>Your Answer</h3>
                 <div id="editor-container">
                 </div>
                 <button id="submit">Submit</button>
-            </div>
-        </div>
-        <div id="rightdiv">
-
-            <div>
-                <h4>The Overflow Blog</h4>
-                <hr>
-                <div class="icons">
-                    <div>
-                        <img src="https://static.thenounproject.com/png/4436557-200.png" alt="">
-                    </div>
-                    <div>
-                        <a>Are clouds having their on-prem moment?</a> <br><br>
-                    </div>
-                </div>
-
-                <div class="icons">
-                    <div>
-                        <img src="https://static.thenounproject.com/png/4436557-200.png" alt="">
-                    </div>
-                    <div>
-                        <a>Authorization on Rails (Ep. 540)</a> <br><br>
-                    </div>
-                </div>
-
-                <hr>
-                <h4>Featured on Meta</h4>
-                <hr>
-                <div class="icons">
-                    <div>
-                        <img src="https://meta.stackexchange.com/Content/Sites/stackexchangemeta/Img/apple-touch-icon@2.png?v=c34d758b103d"
-                            alt="">
-                    </div>
-                    <div>
-                        <a>We've added a "Necessary cookies only" <br> option to the cookie consent popup</a><br><br>
-                    </div>
-                </div>
-
-                <div class="icons">
-                    <div>
-                        <img src="https://meta.stackexchange.com/Content/Sites/stackexchangemeta/Img/apple-touch-icon@2.png?v=c34d758b103d"
-                            alt="">
-                    </div>
-                    <div>
-                        <a>Planned Imgur Maintenance for Thursday,
-                            <br> February 23rd 00:00-01:00 UTC</a><br><br>
-                    </div>
-                </div>
-
-                <div class="icons">
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZuF-mnckApI8bEfsbFBxycvvJSDxFuNn923uiK7W5ww&s"
-                            alt="">
-                    </div>
-                    <div>
-                        <a>We've made changes to our Privacy <br> Notice for Collectives™</a><br><br>
-                    </div>
-                </div>
-
-                <div class="icons">
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZuF-mnckApI8bEfsbFBxycvvJSDxFuNn923uiK7W5ww&s"
-                            alt="">
-                    </div>
-                    <div>
-                        <a>The [amazon] tag is being burninated</a><br><br>
-                    </div>
-                </div>
-
-                <div class="icons">
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZuF-mnckApI8bEfsbFBxycvvJSDxFuNn923uiK7W5ww&s"
-                            alt="">
-                    </div>
-                    <div>
-                        <a>Microsoft Azure Collective launch and <br> proposed tag changes</a><br><br>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="custom">
-
-            </div>
-
-            <div id="watch">
-
-            </div>
-
-            <div id="ignore">
-
-            </div>
-
-            <div id="collectives">
-
             </div>
         </div>
     </div>
@@ -166,33 +72,26 @@ toolbar: [
 placeholder: 'Explain Question in details...',
 theme: 'snow'
 });
-document.querySelector("form").addEventListener("submit", async (e)=>{
-e.preventDefault()
-let heading = document.getElementById("heading").value;
-let innerhtml = quill.root.innerHTML;
-let discreption = quill.root.innerText;
-discreption = discreption.replace(/[\r\n]\s*[\r\n]/g, ' ');
-discreption = discreption.slice(0, 130);
-discreption += "..."
+document.getElementById("submit").addEventListener("click", async ()=>{
+let answer = quill.root.innerHTML;
 let qObj = {
-    heading,
-    discreption,
-    innerhtml
+    answer
 }
 let token = localStorage.getItem("token")
+let question_id = localStorage.getItem("question_id");
+console.log(answer)
 try {
-    let post_question = await fetch("http://localhost:8000/questions/addquestion", {
+    let post_question = await fetch(`http://localhost:8000/questions/addans/${question_id}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "authorization": token
             },
-            body: JSON.stringify({question: qObj})
+            body: JSON.stringify(qObj)
         })
         const res = await post_question.json()
-        if(res._id){
-            localStorage.setItem("question_id", res._id);
-            location.assign("questions.html")
+        if(res){
+            console.log(res)
         }
 } catch (error) {
     console.log(error)
