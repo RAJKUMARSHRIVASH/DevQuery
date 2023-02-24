@@ -21,6 +21,11 @@ const authenticate = (req,res,next)=>{
                 if(req.path == "/addquestion"){
                     req.body.name = decode.name;
                 }
+                if(req.path == `/addans/${req.params.id}`){
+                    req.body.name = decode.name;
+                    req.body.time = Date.now();
+                    req.body.like = 0
+                }
             //   const userRole = decode.role;
             // //   console.log(userRole)
             //   req.body.userrole = userRole

@@ -37,7 +37,9 @@
     padding: 10px;
     font-size: 14px;
     max-height: 500px;
+    max-width: 100%;
     overflow-y: scroll;
+    overflow-x: scroll;
 }
 #dis_que>pre::-webkit-scrollbar-track
 {
@@ -61,10 +63,6 @@
     font-weight: 400;
     color: rgb(53, 53, 53);
 }
-.upper_name_date>p{
-    font-size: 16px;
-    padding: 10px 0;
-}
 .upper_name_date{
     display: flex;
     border-bottom: 1px solid gray;
@@ -72,26 +70,6 @@
 .upper_name_date>p{
     margin-right: 20px;
     color: gray;
-}
-
-/* right div */
-#rightdiv{
-    padding-top: 80px;
-    margin: 0 10px;
-    border-left: 1px solid rgb(212, 212, 212);
-}
-#rightdiv h4 {
-    margin-left: 10px;
-}
-.icons,
-#sidebyside,
-.qtab {
-    display: flex;
-}
-.icons img {
-    width: 20px;
-    margin-left: 10px;
-    margin-right: 7px
 }
 
 #submit {
@@ -142,4 +120,50 @@
   }
   .answerbox>h3{
     padding: 10px 0;
+  }
+
+  #question{
+    border-bottom: 1px solid gray;
+  }
+
+  /* answers */
+  #ans_count{
+    padding: 10px 0;
+    font-size: 24px;
+  }
+  .answers_divs{
+    display: flex;
+    width: 100%;
+  }
+  .answers_divs>:first-child{
+    padding-right: 20px;
+    font-size: 26px;
+  }
+  .ans_p>pre{
+    background-color: rgb(37, 37, 37);
+    color: aliceblue;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+    max-height: 500px;
+    max-width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+  .answers_divs{
+    border-top: 1px solid gray;
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  .answers_divs>:first-child{
+    text-align: center;
+  }
+  .answerer{
+    display: flex;
+  }
+  .answerer>p{
+    margin-right: 15px;
+    color: gray;
   }
