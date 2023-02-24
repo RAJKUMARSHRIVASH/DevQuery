@@ -105,8 +105,8 @@ let navbar = () => {
           <i class="fas fa-search"></i>
         </div>
 
-        <a href="./html/login.html" class="btn btn-login">Log in</a>
-        <a href="./html/register.html" class="btn btn-register">Sign up</a>
+        <a href="../html/login.html" class="btn btn-login" id="in_login">Log in</a>
+        <a href="../html/register.html" class="btn btn-register" id="in_signup">Sign up</a>
       </div>
     </nav>
   </div>
