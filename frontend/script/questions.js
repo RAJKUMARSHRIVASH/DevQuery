@@ -12,6 +12,10 @@ async function get_question(id){
     }
 };
 
+document.getElementById("sub").onclick = ()=>{
+    location.assign("../html/ask.html")
+}
+
 function renderQuestion(question){
     let temp = document.createElement("div");
     let name = document.createElement("p");
