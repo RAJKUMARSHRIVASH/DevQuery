@@ -6,12 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
     <link rel="shortcut icon" href="../favicon/mini.logo.png" />
     <!----------------------------- navbar css --------------------------------->
     <link rel="stylesheet" href="../style/nav.css" />
@@ -26,18 +23,74 @@
         /* left div added from HOMEPAGE */
         /* Edit as per your needs */
         #leftdiv {
-            margin-top: -300px;
-            margin-left: 30px
-            
+            margin-left: 30px;
+            width: 15%;
+            /* border: 1px solid; */
+            position: fixed;
+            padding-top: 27vh;
+            left: 20px;
+            top: 0;
+            height: 100vh;
+            border-right: 1.5px solid;
+            border-color: rgb(170, 166, 165);
+            cursor: pointer;
+
         }
 
         #leftdiv a {
+            padding: 5px;
             text-decoration: none;
             color: black;
+
         }
 
-        #leftdiv ul a {
-            margin-left: -20px
+        #leftdiv>a {
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            /* margin-bottom: 5px; */
+            font-size: medium;
+            margin-bottom: 10px;
+
+        }
+
+        #leftdiv>a:hover {
+            background-color: bisque;
+
+        }
+
+        #leftdiv p {
+            width: 100%;
+            margin-bottom: 5px;
+            font-size: medium;
+            padding: 5px;
+
+        }
+
+        #leftdiv p:hover {
+            background-color: bisque;
+
+        }
+
+        #leftdiv ul li {
+            margin-left: 10%;
+            width: 90%;
+            margin-bottom: 5px;
+        }
+
+        #leftdiv ul li:hover {
+            background-color: rgb(222, 226, 226);
+        }
+
+        .Collectives {
+            margin-left: 10%;
+            width: 90%;
+            margin-bottom: 5px;
+        }
+
+        .Collectives:hover {
+            background-color: rgb(222, 226, 226);
+
         }
 
         /* --------------------- */
@@ -46,10 +99,11 @@
             height: 100vh;
             font-weight: normal;
             font-size: small;
+            position: relative;
         }
 
         #user-body {
-            margin-top: 10vh;
+            margin-top: 7vh;
             width: 75%;
             margin-left: 20%;
             /* border: 1px solid; */
@@ -57,7 +111,7 @@
         }
 
         #user-body>h1 {
-           margin-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .row {
@@ -120,6 +174,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px 10px;
+            /* outline: auto; */
+            height: auto;
         }
 
         .user-box>div {
@@ -147,6 +203,11 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+
+        }
+
+        .user-box>div>div p {
+            color: rgb(7, 7, 188);
 
         }
 
@@ -178,6 +239,10 @@
             .user-box {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            #leftdiv {
+                display: none;
+            }
         }
 
         /* for mobile / small screen size and lower */
@@ -208,6 +273,10 @@
             .user-box {
                 grid-template-columns: repeat(1, 1fr);
             }
+
+            #leftdiv {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -216,7 +285,7 @@
     <div id="NAVBAR">
         <!-- navbar here "Copy this div" -->
     </div>
-    <div class="cntnr">
+    <div class="cntnr" style="height: auto;">
 
         <!-- main body -->
         <section id="user-body">
@@ -256,13 +325,13 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="other-list">
                 <p>COLLECTIVES</p>
-                <a href="">Explore Collectives</a>
+                <a href="" class="Collectives">Explore Collectives</a>
             </div>
             <div>
                 <p>TEAMS</p>
-                <a href="">Create free team</a>
+                <a href="" class="Collectives">Create free team</a>
             </div>
         </div>
 
@@ -278,75 +347,51 @@
 <script>
 
     let baseURL = "http://localhost:8000";
-
+    let bag = []
     let getAllUsers = async () => {
         try {
             let fData = await fetch(`${baseURL}/users/getall`);
             const users = await fData.json();
-            // console.log(users)
-
-            let basket = document.querySelector(".user-box");
-
-            for (const user of users) {
-                let div1 = document.createElement("div");
-                let div2 = document.createElement("div");
-
-                let img = document.createElement("img");
-                img.src = "../imgs/profile.png";
-
-                let name = document.createElement("h3");
-                name.innerText = user.name;
-
-                let email = document.createElement("p");
-                email.innerText = user.email;
-
-                div2.append(name, email);
-                div1.append(img, div2);
-
-                basket.append(div1);
-            }
-
+            bag = users;    // for searching functionality;
+            display(users);
         } catch (error) {
             alert(error)
         }
     }
     getAllUsers();
 
+    function display(users) {
+
+        document.querySelector(".user-box").innerHTML = "";
+        
+        let basket = document.querySelector(".user-box");
+        for (const user of users) {
+            let div1 = document.createElement("div");
+            let div2 = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = "../imgs/profile.png";
+
+            let name = document.createElement("h3");
+            name.innerText = user.name;
+
+            let email = document.createElement("p");
+            email.innerText = user.email;
+
+            div2.append(name, email);
+            div1.append(img, div2);
+
+            basket.append(div1);
+        }
+    }
 
     async function search() {
-        try {
-            let fData = await fetch(`${baseURL}/users/getall`);
-            const users = await fData.json();
+        let input = document.querySelector(".user-body-filter-searchbox").value;
+        let newData = bag.filter(element => {
+            return element.name.toLowerCase().includes(input.toLowerCase());
+        });
+        display(newData);
 
-            let word = document.querySelector(".user-body-filter-searchbox").value;
-
-            let basket = document.querySelector(".user-box");
-
-            // for (const user of users) {
-            //     if(users.includes(word)){
-            //         basket.innerHTML = "";
-            //         let div1 = document.createElement("div");
-            //         let div2 = document.createElement("div");
-
-            //         let img = document.createElement("img");
-            //         img.src = "./imgs/profile.png";
-
-            //         let name = document.createElement("h3");
-            //         name.innerText = user.name;
-
-            //         let email = document.createElement("p");
-            //         email.innerText = user.email;
-
-            //         div2.append(name, email);
-            //         div1.append(img, div2);
-
-            //         basket.append(div1);
-            //     }
-            // }
-
-        } catch (error) {
-            alert(error)
-        }
     }
 
 </script>
