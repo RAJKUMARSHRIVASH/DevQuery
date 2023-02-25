@@ -52,7 +52,7 @@ userRoute.post("/register", async (req, res) => {
             res.cookie("token",token)
 
 
-            res.json({"message":"login successfull", "token": token})
+            res.json({"message":"login successfull", "token": token, "username": user[0].name})
             // res.json({ "message": "login sucessfull","token":token });
 
           } else {
