@@ -41,3 +41,6 @@ search_btn.addEventListener("click", () => {
     search_hint.classList.toggle("open");
   }, 50);
 });
+
+let name = document.getElementById("user-name");
+console.log(name.innerText)
