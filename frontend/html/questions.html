@@ -1,92 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
     <!----------------------------- navbar css --------------------------------->
     <link rel="stylesheet" href="../style/nav.css" />
     <!----------------------------- navbar css --------------------------------->
-    <link rel="stylesheet" href="../style/questions.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../style/questions.css" />
+  </head>
+  <body>
+    <div id="preloader">
+      <!-- this is the preloader -->
+      <i class="preloader-icon fa fa-spinner"></i>
+    </div>
     <div id="NAVBAR">
-        <!-- navbar here "Copy this div" -->
+      <!-- navbar here "Copy this div" -->
     </div>
     <div id="home">
-        <div id="leftdiv">
-            <a id="home_link" href="../html/home.html">Home</a>
-            <div>
-                <ul style="list-style-type:none;">
-                    <li><a href="../html/home.html">All Questions</a>
-                    </li>
-                    <li><a href="../html/ask.html">Post Question</a>
-                    </li>
-                    <li><a href="../html/users.html">Users</a>
-                    </li>
-                </ul>
-                <button id="sub">Post Your Question</button>
-            </div>
+      <div id="leftdiv">
+        <a id="home_link" href="../html/home.html">Home</a>
+        <div>
+          <ul style="list-style-type: none">
+            <li><a href="../html/home.html">All Questions</a></li>
+            <li><a href="../html/ask.html">Post Question</a></li>
+            <li><a href="../html/users.html">Users</a></li>
+          </ul>
+          <button id="sub">Post Your Question</button>
         </div>
-        <div id="renderdata">
-            <div id="question"></div>
-            <div id="ans_count"></div>
-            <div id="ans"></div>
-            <div class="answerbox" id="answerbox">
-                <h3>Your Answer</h3>
-                <div id="editor-container">
-                </div>
-                <button id="submit">Post Your Answer</button>
-            </div>
+      </div>
+      <div id="renderdata">
+        <div id="question"></div>
+        <div id="ans_count"></div>
+        <div id="ans"></div>
+        <div class="answerbox" id="answerbox">
+          <h3>Your Answer</h3>
+          <div id="editor-container"></div>
+          <button id="submit">Post Your Answer</button>
         </div>
+      </div>
     </div>
     <div id="FOOTER">
-        <!-- footer here copy this div -->
+      <!-- footer here copy this div -->
     </div>
+    <script>
+      // Hide the preloader when the page is loaded
+      window.addEventListener("load", () => {
+        document.querySelector("body").classList.add("loaded");
+      });
+    </script>
     <script type="module" src="../script/navbar.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="../script/questions.js"></script>
-</body>
-<script>
-    var quill = new Quill('#editor-container', {
-modules: {
-toolbar: [
-  [{ header: [1, 2,3, 4, 5, 6, false] }],
-  ['bold', 'italic', 'underline'],
-  ['code-block'],
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }]
-]
-},
-placeholder: 'Explain Question in details...',
-theme: 'snow'
-});
-document.getElementById("submit").addEventListener("click", async ()=>{
-let answer = quill.root.innerHTML;
-let qObj = {
-    answer
-}
-let token = localStorage.getItem("token")
-let question_id = localStorage.getItem("question_id");
-// console.log(res)
-try {
-    let post_question = await fetch(`http://localhost:8000/questions/addans/${question_id}`, {
+  </body>
+  <script>
+    var quill = new Quill("#editor-container", {
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, 3, 4, 5, 6, false] }],
+          ["bold", "italic", "underline"],
+          ["code-block"],
+          [{ list: "ordered" }, { list: "bullet" }],
+        ],
+      },
+      placeholder: "Explain Question in details...",
+      theme: "snow",
+    });
+    document.getElementById("submit").addEventListener("click", async () => {
+      let answer = quill.root.innerHTML;
+      let qObj = {
+        answer,
+      };
+      let token = localStorage.getItem("token");
+      let question_id = localStorage.getItem("question_id");
+      // console.log(res)
+      try {
+        let post_question = await fetch(
+          `http://localhost:8000/questions/addans/${question_id}`,
+          {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "authorization": token
+              "Content-Type": "application/json",
+              authorization: token,
             },
-            body: JSON.stringify(qObj)
-        })
-        const res = await post_question.json()
-        if(res){
-            quill.root.innerHTML = null;
-            get_question(localStorage.getItem("question_id"))
+            body: JSON.stringify(qObj),
+          }
+        );
+        const res = await post_question.json();
+        if (res) {
+          quill.root.innerHTML = null;
+          get_question(localStorage.getItem("question_id"));
         }
-} catch (error) {
-    console.log(error)
-}
-})
-</script>
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  </script>
 </html>
