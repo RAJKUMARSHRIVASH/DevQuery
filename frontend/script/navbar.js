@@ -42,7 +42,23 @@ search_btn.addEventListener("click", () => {
   }, 50);
 });
 
-let name = document.getElementById("user-name");
-let userName = localStorage.getItem("username");
-name.innerText = userName.split(" ").slice(0,1)
-// console.log(userName)
+function ifUser() {
+  let parentName = document.getElementById("user-info")
+  let name = document.getElementById("user-name");
+  let userName = localStorage.getItem("username");
+  let loginbtn = document.getElementById("in_login");
+  let signupbtn = document.getElementById("in_signup");
+  if(userName){
+    name.innerText = userName.split(" ").slice(0, 1);
+    loginbtn.innerText = "Log out"
+    signupbtn.style.display = "none"
+    if(loginbtn.innerText== "Log out"){
+      loginbtn.addEventListener("click",()=>{
+        localStorage.clear("username")        
+      })
+    }
+  }else{
+    parentName.innerHTML=""
+  }
+}
+ifUser()

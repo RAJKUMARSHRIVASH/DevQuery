@@ -680,6 +680,7 @@ nav {
 /* End Media Queries */
 
 /* user name on navbar */
+
 #user-info > h3{
   display: table-cell;
   height: 49px;
