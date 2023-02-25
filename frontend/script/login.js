@@ -1,3 +1,4 @@
+
 let loginForm = document.querySelector("form")
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault()
@@ -29,3 +30,4 @@ let loginForm = document.querySelector("form")
             console.log(error.message)
         }
     })
+
