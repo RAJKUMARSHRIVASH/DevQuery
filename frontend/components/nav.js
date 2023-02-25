@@ -108,7 +108,7 @@ let navbar = () => {
         <a href="../html/login.html" class="btn btn-login" id="in_login">Log in</a>
         <a href="../html/register.html" class="btn btn-register" id="in_signup">Sign up</a>
       </div>
-      <div id="user-info"><h3>Hello <br> <span id="user-name">Dheeraj</span></h3></div>
+      <div id="user-info"><h3>Hello <br> <span id="user-name"></span></h3></div>
     </nav>
   </div>
 </header>
