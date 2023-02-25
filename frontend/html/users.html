@@ -204,6 +204,11 @@
 
         }
 
+        .user-box>div>div p {
+            color: rgb(7, 7, 188);
+
+        }
+
         /* for medium / tab screen size */
         @media screen and (min-width : 481px) and (max-width : 800px) {
 
@@ -332,75 +337,49 @@
 <script>
 
     let baseURL = "http://localhost:8000";
-
+    let bag = []
     let getAllUsers = async () => {
         try {
             let fData = await fetch(`${baseURL}/users/getall`);
             const users = await fData.json();
-            // console.log(users)
-
-            let basket = document.querySelector(".user-box");
-
-            for (const user of users) {
-                let div1 = document.createElement("div");
-                let div2 = document.createElement("div");
-
-                let img = document.createElement("img");
-                img.src = "../imgs/profile.png";
-
-                let name = document.createElement("h3");
-                name.innerText = user.name;
-
-                let email = document.createElement("p");
-                email.innerText = user.email;
-
-                div2.append(name, email);
-                div1.append(img, div2);
-
-                basket.append(div1);
-            }
-
+            bag = users;    // for searching functionality;
+            display(users);
         } catch (error) {
             alert(error)
         }
     }
     getAllUsers();
 
+    function display(users) {
+        document.querySelector(".user-box").innerHTML = "";
+        let basket = document.querySelector(".user-box");
+        for (const user of users) {
+            let div1 = document.createElement("div");
+            let div2 = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = "../imgs/profile.png";
+
+            let name = document.createElement("h3");
+            name.innerText = user.name;
+
+            let email = document.createElement("p");
+            email.innerText = user.email;
+
+            div2.append(name, email);
+            div1.append(img, div2);
+
+            basket.append(div1);
+        }
+    }
 
     async function search() {
-        try {
-            let fData = await fetch(`${baseURL}/users/getall`);
-            const users = await fData.json();
+        let input = document.querySelector(".user-body-filter-searchbox").value;
+        let newData = bag.filter(element => {
+            return element.name.toLowerCase().includes(input.toLowerCase());
+        });
+        display(newData);
 
-            let word = document.querySelector(".user-body-filter-searchbox").value;
-
-            let basket = document.querySelector(".user-box");
-
-            // for (const user of users) {
-            //     if(users.includes(word)){
-            //         basket.innerHTML = "";
-            //         let div1 = document.createElement("div");
-            //         let div2 = document.createElement("div");
-
-            //         let img = document.createElement("img");
-            //         img.src = "./imgs/profile.png";
-
-            //         let name = document.createElement("h3");
-            //         name.innerText = user.name;
-
-            //         let email = document.createElement("p");
-            //         email.innerText = user.email;
-
-            //         div2.append(name, email);
-            //         div1.append(img, div2);
-
-            //         basket.append(div1);
-            //     }
-            // }
-
-        } catch (error) {
-            alert(error)
-        }
     }
 
 </script>
