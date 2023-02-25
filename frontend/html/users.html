@@ -358,15 +358,20 @@
             alert(error)
         }
     }
+    
     getAllUsers();
 
     function display(users) {
 
         document.querySelector(".user-box").innerHTML = "";
-        
+
         let basket = document.querySelector(".user-box");
         for (const user of users) {
             let div1 = document.createElement("div");
+            div1.addEventListener("click",()=>{
+                window.location.href = "websocket.html";
+            })
+
             let div2 = document.createElement("div");
 
             let img = document.createElement("img");
