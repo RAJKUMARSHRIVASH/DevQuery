@@ -87,8 +87,8 @@ a {
 #leftdiv {
     position:fixed;
     width: 14%;
-    border-right: double;
-    height: 100%;
+    /* border-right: double;
+    height:auto; */
     text-align: left;
     margin: auto;
     margin-left: -40px;
