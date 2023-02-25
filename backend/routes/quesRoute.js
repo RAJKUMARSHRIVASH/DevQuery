@@ -86,6 +86,13 @@ quesRoute.get("/:id",validate, async (req, res) => {
     
 })
 
+quesRoute.get("/search/:ques", async (req, res) => {
+    let ques = req.params.ques
+    console.log(ques)
+    let data = await QuesModel.find({"question.heading": { $regex: ques, $options: "i" } })
+    res.send(data)
+})
+
 
 
 
