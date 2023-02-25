@@ -27,11 +27,31 @@ function renderQuestion(question){
     temp.classList = "upper_name_date"
     temp.append(name, posted)
     question_div.append(h1, temp, p)
-
+    document.getElementById("ans_count").innerText =  `${question.answer.length} Answers`
     question.answer.forEach((el)=>{
+        let div = document.createElement("div");
+        div.classList = "answers_divs";
+        let innerdiv1 = document.createElement("div");
+        innerdiv1.classList = "answerer";
+        let name = document.createElement("p");
+        name.innerText = `Author: ${el.name}`;
+        let posted = document.createElement("p");
+        let date = new Date(el.time)
+        posted.innerText = `Asked: ${date.toLocaleString()}`;
+        innerdiv1.append(name, posted)
+        let innerdiv2 = document.createElement("div");
+        let like = document.createElement("p");
+        like.innerText = "👍"
+        let count = document.createElement("p");
+        count.innerText = el.like;
+        innerdiv2.append(like, count)
         let p = document.createElement("p");
-        p.innerText = el.answer;
-        document.getElementById("ans").append(p)
+        p.innerHTML = el.answer;
+        p.classList = "ans_p";
+        let newdiv = document.createElement("div");
+        newdiv.append(innerdiv1, p);
+        div.append(innerdiv2, newdiv)
+        document.getElementById("ans").append(div)
     })
 }
 

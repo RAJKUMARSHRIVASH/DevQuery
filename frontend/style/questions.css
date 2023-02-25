@@ -4,8 +4,11 @@
     margin: auto;
     min-height: 80vh;
 }
+#home>*{
+    font-size: 16px;
+}
 #leftdiv{
-    min-height: 500px;
+    min-height: 100vh;
     position: fixed;
     width: 150px;
     padding-top: 80px;
@@ -34,7 +37,9 @@
     padding: 10px;
     font-size: 14px;
     max-height: 500px;
+    max-width: 100%;
     overflow-y: scroll;
+    overflow-x: scroll;
 }
 #dis_que>pre::-webkit-scrollbar-track
 {
@@ -58,10 +63,6 @@
     font-weight: 400;
     color: rgb(53, 53, 53);
 }
-.upper_name_date>p{
-    font-size: 16px;
-    padding: 10px 0;
-}
 .upper_name_date{
     display: flex;
     border-bottom: 1px solid gray;
@@ -71,22 +72,98 @@
     color: gray;
 }
 
-/* right div */
-#rightdiv{
-    padding-top: 80px;
-    margin: 0 10px;
-    border-left: 1px solid rgb(212, 212, 212);
-}
-#rightdiv h4 {
-    margin-left: 10px;
-}
-.icons,
-#sidebyside,
-.qtab {
+#submit {
+    background-color: #0095ff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    margin: 5px 0;
+  }
+  
+  #submit:hover,
+  #submit:focus {
+    background-color: #07c;
+  }
+  
+  #submit:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  }
+  
+  #submit:active {
+    background-color: #0064bd;
+    box-shadow: none;
+  }
+
+  .answerbox{
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid gray;
+  }
+  .answerbox>h3{
+    padding: 10px 0;
+  }
+
+  #question{
+    border-bottom: 1px solid gray;
+  }
+
+  /* answers */
+  #ans_count{
+    padding: 10px 0;
+    font-size: 24px;
+  }
+  .answers_divs{
     display: flex;
-}
-.icons img {
-    width: 20px;
-    margin-left: 10px;
-    margin-right: 7px
-}
+    width: 100%;
+  }
+  .answers_divs>:first-child{
+    padding-right: 20px;
+    font-size: 26px;
+  }
+  .ans_p>pre{
+    background-color: rgb(37, 37, 37);
+    color: aliceblue;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+    max-height: 500px;
+    max-width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+  .answers_divs{
+    border-top: 1px solid gray;
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  .answers_divs>:first-child{
+    text-align: center;
+  }
+  .answerer{
+    display: flex;
+  }
+  .answerer>p{
+    margin-right: 15px;
+    color: gray;
+  }

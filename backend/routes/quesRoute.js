@@ -54,12 +54,13 @@ quesRoute.post("/addquestion", authenticate, async (req, res) => {
 
 quesRoute.post("/addans/:id", authenticate, async (req, res) => {
     const quesID = req.params.id;
-    const { name, answer, userID, questionaskerID } = req.body;
-    if (userID == questionaskerID) {
+    const { name, answer, userID, time, like } = req.body;
+    console.log(req.body)
+    if (false) {
         res.json({ "mas": "You cann't answer your own questions" })
     }
     try {
-        const add_ans = await QuesModel.updateOne({ "_id": quesID }, { $push: { "answer": { name, answer, userID } } })
+        const add_ans = await QuesModel.updateOne({ "_id": quesID }, { $push: { "answer": { name, answer, userID, time, like } } })
         res.json(add_ans)
     } catch (error) {
         console.log(error)

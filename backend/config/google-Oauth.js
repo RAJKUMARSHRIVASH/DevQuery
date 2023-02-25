@@ -13,15 +13,18 @@ passport.use(new GoogleStrategy({
  async  function(accessToken, refreshToken, profile, cb) {
      let email = profile._json.email
     let name = profile._json.name
-    const user = {name,email}
-  //  const user = new UserModel({
-  //   name,
-  //   email,
-  //   password: uuidv4()
-  //  })
-  //  await user.save()
+    let x = await UserModel.findOne({email});
+    if(x){
+      return cb(null, x);
+    }
+   const user = new UserModel({
+    name,
+    email,
+    password: uuidv4()
+   })
+   await user.save()
   //  console.log(profile)
-          return cb(null, user);
+      return cb(null, user);
   }
 ));
 
