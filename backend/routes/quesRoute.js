@@ -2,10 +2,11 @@ const express = require("express");
 const quesRoute = express.Router();
 const { QuesModel } = require("../model/questionModel");
 const { authenticate } = require("../middleware/authenticate")
+const { validate } = require("../middleware/validate")
 
 
 quesRoute.get("/", async (req, res) => {
-    let data = await QuesModel.find()
+    let data = await QuesModel.find();
     res.send(data)
 })
 
@@ -68,10 +69,21 @@ quesRoute.post("/addans/:id", authenticate, async (req, res) => {
 })
 
 
-quesRoute.get("/:id", async (req, res) => {
+quesRoute.get("/:id",validate, async (req, res) => {
     let q = req.params.id
-    let data = await QuesModel.findById(q)
-    res.send(data)
+    let data = await QuesModel.findById(q);
+    let own = false
+    if(req.body.isLogged != false){
+        if(req.body.userID == data.userID){
+            own = true;
+            res.json({data, own})
+        }else{
+            res.json({data})
+        }
+    }else{
+        res.json({data})
+    }
+    
 })
 
 quesRoute.get("/search/:ques", async (req, res) => {
