@@ -193,6 +193,9 @@
   }
   .answerer{
     display: flex;
+    padding: 10px 0;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgb(209, 209, 209);
   }
   .answerer>p{
     margin-right: 15px;

@@ -34,7 +34,7 @@
             <div id="question"></div>
             <div id="ans_count"></div>
             <div id="ans"></div>
-            <div class="answerbox">
+            <div class="answerbox" id="answerbox">
                 <h3>Your Answer</h3>
                 <div id="editor-container">
                 </div>
@@ -69,7 +69,7 @@ let qObj = {
 }
 let token = localStorage.getItem("token")
 let question_id = localStorage.getItem("question_id");
-console.log(answer)
+// console.log(res)
 try {
     let post_question = await fetch(`http://localhost:8000/questions/addans/${question_id}`, {
             method: "POST",
@@ -81,7 +81,8 @@ try {
         })
         const res = await post_question.json()
         if(res){
-            console.log(res)
+            quill.root.innerHTML = null;
+            get_question(localStorage.getItem("question_id"))
         }
 } catch (error) {
     console.log(error)
