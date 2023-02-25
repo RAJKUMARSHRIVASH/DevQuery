@@ -45,4 +45,4 @@ search_btn.addEventListener("click", () => {
 let name = document.getElementById("user-name");
 let userName = localStorage.getItem("username");
 name.innerText = userName.split(" ").slice(0,1)
-console.log(userName)
+// console.log(userName)
