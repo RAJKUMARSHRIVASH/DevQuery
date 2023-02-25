@@ -174,6 +174,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px 10px;
+            /* outline: auto; */
+            height: auto;
         }
 
         .user-box>div {
@@ -237,6 +239,10 @@
             .user-box {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            #leftdiv {
+                display: none;
+            }
         }
 
         /* for mobile / small screen size and lower */
@@ -267,6 +273,10 @@
             .user-box {
                 grid-template-columns: repeat(1, 1fr);
             }
+
+            #leftdiv {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -275,7 +285,7 @@
     <div id="NAVBAR">
         <!-- navbar here "Copy this div" -->
     </div>
-    <div class="cntnr">
+    <div class="cntnr" style="height: auto;">
 
         <!-- main body -->
         <section id="user-body">

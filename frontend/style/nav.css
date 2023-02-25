@@ -499,6 +499,8 @@ nav {
   padding-top: 4rem;
   padding-bottom: 4rem;
   position: relative;
+
+  bottom:0;
 }
 
 .footer-content {
