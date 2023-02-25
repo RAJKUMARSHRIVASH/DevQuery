@@ -3,16 +3,38 @@ let question_id = localStorage.getItem("question_id");
 
 async function get_question(id){
     try {
-        let question = await fetch(`http://localhost:8000/questions/${id}`);
-        let res = await question.json();
-        console.log(res)
-        renderQuestion(res)
+        if(localStorage.getItem("token")){
+            let question = await fetch(`http://localhost:8000/questions/${id}`, {
+                headers:{
+                    'Authorization': localStorage.getItem("token")
+                }
+            });
+            let res = await question.json();
+            renderQuestion(res.data);
+            if(res.own){
+                document.getElementById("answerbox").innerHTML = null
+                document.getElementById("answerbox").innerHTML = `<h3>Your Answer</h3>
+                <div id="editor-container">
+                </div><h1>You can't answer your own Questions</h1>`
+            }
+        }else{
+            let question = await fetch(`http://localhost:8000/questions/${id}`);
+            let res = await question.json();
+            console.log(res)
+            renderQuestion(res.data);
+            
+        }
     } catch (error) {
         console.log(error)
     }
 };
 
+document.getElementById("sub").onclick = ()=>{
+    location.assign("../html/ask.html")
+}
+
 function renderQuestion(question){
+    question_div.innerHTML = null;
     let temp = document.createElement("div");
     let name = document.createElement("p");
     name.innerText = `Author: ${question.name}`;
@@ -28,7 +50,12 @@ function renderQuestion(question){
     temp.append(name, posted)
     question_div.append(h1, temp, p)
     document.getElementById("ans_count").innerText =  `${question.answer.length} Answers`
-    question.answer.forEach((el)=>{
+    answers(question.answer)
+}
+
+function answers(data){
+    document.getElementById("ans").innerHTML = null;
+    data.forEach((el)=>{
         let div = document.createElement("div");
         div.classList = "answers_divs";
         let innerdiv1 = document.createElement("div");
@@ -37,7 +64,7 @@ function renderQuestion(question){
         name.innerText = `Author: ${el.name}`;
         let posted = document.createElement("p");
         let date = new Date(el.time)
-        posted.innerText = `Asked: ${date.toLocaleString()}`;
+        posted.innerText = `Answered on: ${date.toLocaleString()}`;
         innerdiv1.append(name, posted)
         let innerdiv2 = document.createElement("div");
         let like = document.createElement("p");

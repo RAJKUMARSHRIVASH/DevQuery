@@ -28,7 +28,7 @@
                     <div id="editor-container">
                     </div>
                 </div>
-                <button id="submit">Submit</button>
+                <button id="submit">Post Your Question</button>
             </div>
         </form>
     </div>
@@ -57,8 +57,10 @@ document.querySelector("form").addEventListener("submit", async (e)=>{
     let innerhtml = quill.root.innerHTML;
     let discreption = quill.root.innerText;
     discreption = discreption.replace(/[\r\n]\s*[\r\n]/g, ' ');
+    discreption = discreption.replace(/\s\s+/g, ' ');
     discreption = discreption.slice(0, 130);
-    discreption += "..."
+    discreption += "...";
+    console.log(discreption)
     let qObj = {
         heading,
         discreption,
