@@ -6,12 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
     <link rel="shortcut icon" href="../favicon/mini.logo.png" />
     <!----------------------------- navbar css --------------------------------->
     <link rel="stylesheet" href="../style/nav.css" />
@@ -26,18 +23,74 @@
         /* left div added from HOMEPAGE */
         /* Edit as per your needs */
         #leftdiv {
-            margin-top: -300px;
-            margin-left: 30px
-            
+            margin-left: 30px;
+            width: 15%;
+            /* border: 1px solid; */
+            position: fixed;
+            padding-top: 27vh;
+            left: 20px;
+            top: 0;
+            height: 100vh;
+            border-right: 1.5px solid;
+            border-color: rgb(170, 166, 165);
+            cursor: pointer;
+
         }
 
         #leftdiv a {
+            padding: 5px;
             text-decoration: none;
             color: black;
+
         }
 
-        #leftdiv ul a {
-            margin-left: -20px
+        #leftdiv>a {
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            /* margin-bottom: 5px; */
+            font-size: medium;
+            margin-bottom: 10px;
+
+        }
+
+        #leftdiv>a:hover {
+            background-color: bisque;
+
+        }
+
+        #leftdiv p {
+            width: 100%;
+            margin-bottom: 5px;
+            font-size: medium;
+            padding: 5px;
+
+        }
+
+        #leftdiv p:hover {
+            background-color: bisque;
+
+        }
+
+        #leftdiv ul li {
+            margin-left: 10%;
+            width: 90%;
+            margin-bottom: 5px;
+        }
+
+        #leftdiv ul li:hover {
+            background-color: rgb(222, 226, 226);
+        }
+
+        .Collectives {
+            margin-left: 10%;
+            width: 90%;
+            margin-bottom: 5px;
+        }
+
+        .Collectives:hover {
+            background-color: rgb(222, 226, 226);
+
         }
 
         /* --------------------- */
@@ -46,10 +99,11 @@
             height: 100vh;
             font-weight: normal;
             font-size: small;
+            position: relative;
         }
 
         #user-body {
-            margin-top: 10vh;
+            margin-top: 7vh;
             width: 75%;
             margin-left: 20%;
             /* border: 1px solid; */
@@ -57,7 +111,7 @@
         }
 
         #user-body>h1 {
-           margin-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .row {
@@ -256,13 +310,13 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="other-list">
                 <p>COLLECTIVES</p>
-                <a href="">Explore Collectives</a>
+                <a href="" class="Collectives">Explore Collectives</a>
             </div>
             <div>
                 <p>TEAMS</p>
-                <a href="">Create free team</a>
+                <a href="" class="Collectives">Create free team</a>
             </div>
         </div>
 
