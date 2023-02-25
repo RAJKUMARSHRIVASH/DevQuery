@@ -33,7 +33,10 @@ a {
     margin-bottom: 10px;
 }
 
-button {
+
+#latest,
+#old,
+#hot {
     background-color: rgb(10, 149, 255);
     color: white;
     width: 80px;
@@ -42,7 +45,10 @@ button {
     margin-right: 5px;
 }
 
-button:hover {
+
+#latest:hover,
+#old:hover,
+#hot:hover {
     background-color: rgb(233, 121, 30);
     cursor: pointer;
 }
@@ -79,13 +85,14 @@ button:hover {
 }
 
 #leftdiv {
-    position: fixed;
+    position:fixed;
     width: 14%;
-    /* border:1px solid black; */
-    height: 50%;
+    border-right: double;
+    height: 100%;
     text-align: left;
     margin: auto;
     margin-left: -40px;
+    margin-top:-14px
 
 
 }
@@ -173,7 +180,7 @@ button:hover {
 
 .vertical {
     border-left: 1px solid black;
-    height: 200%;
+    
     position: absolute;
     margin-left: -470px;
     left: 50%;
