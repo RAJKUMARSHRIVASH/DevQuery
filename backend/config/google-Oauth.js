@@ -11,7 +11,8 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:8000/auth/google/callback"
   },
  async  function(accessToken, refreshToken, profile, cb) {
-     let email = profile._json.email
+      // console.log(profile)
+    let email = profile._json.email
     let name = profile._json.name
     let x = await UserModel.findOne({email});
     if(x){
@@ -22,10 +23,10 @@ passport.use(new GoogleStrategy({
     email,
     password: uuidv4()
    })
-   await user.save()
-  //  console.log(profile)
-      return cb(null, user);
+   await user.save();
+    return cb(null, user);
   }
+  
 ));
 
 module.exports = passport;

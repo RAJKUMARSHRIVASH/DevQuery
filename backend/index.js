@@ -39,7 +39,8 @@ app.get('/auth/google/callback',
      session:false }),
   function(req, res) {
     // Successful authentication, redirect home.
-    // console.log(req.user)
+      // console.log(req.user)
+    res.cookie("user_detail",req.user)
     res.redirect('http://localhost:8000/auth/index.html');
   });
 
