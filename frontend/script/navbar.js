@@ -48,23 +48,22 @@ search_btn.addEventListener("click", () => {
 const searching = document.querySelector('#searching');
 
 searching.addEventListener('click', async function (event) {
-
-  setTimeout(() => {
-    search_hint.classList.remove("open");
-  }, 50);
-
-  let ques = document.getElementById("ques").value
-  console.log(ques)
-  document.getElementById("ques").value = ""
-
-  let data = await fetch(`http://localhost:8000/questions/search/${ques}`);
-  let res = await data.json();
-  console.log(res)
-
-  Maindiv.innerHTML = ""
-  renderData(res);
+  if(searching.value!==""){
+    setTimeout(() => {
+      search_hint.classList.remove("open");
+    }, 50);
   
-
+    let ques = document.getElementById("ques").value
+    console.log(ques)
+    document.getElementById("ques").value = ""
+  
+    let data = await fetch(`http://localhost:8000/questions/search/${ques}`);
+    let res = await data.json();
+    console.log(res)
+  
+    Maindiv.innerHTML = ""
+    renderData(res);  
+  }
 });
 
 
