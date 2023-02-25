@@ -21,12 +21,8 @@
     <!----------------------------- navbar css --------------------------------->
   </head>
   <body>
-    <div style="scrollbar-width: none;" id="preloader">
+    <div id="preloader">
       <i class="preloader-icon fa fa-spinner"></i>
-    </div>
-
-    <div class="loaded">
-      <!-- Your page content here -->
     </div>
 
     <div id="NAVBAR">
@@ -591,16 +587,14 @@
     <div id="FOOTER">
       <!-- footer here copy this div -->
     </div>
-    
+
     <script>
       // Hide the preloader when the page is loaded
-      window.addEventListener('load', () => {
-        document.querySelector('body').classList.add('loaded');
+      window.addEventListener("load", () => {
+        document.querySelector("body").classList.add("loaded");
       });
     </script>
-    <noscript>
-      document.body.style.overflow = "unset";
-    </noscript>
+
     <script type="module" src="./script/navbar.js"></script>
     <script type="module" src="./script/index.js"></script>
   </body>
