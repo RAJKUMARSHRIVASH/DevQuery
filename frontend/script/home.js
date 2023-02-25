@@ -4,6 +4,9 @@ document.getElementById("askques").addEventListener("click", () => {
     window.location.href = "ask.html"
 })
 
+
+
+
 let Maindiv = document.getElementById("renderhere");
 
 // all about fetching and rendering data
@@ -33,6 +36,7 @@ function renderData(array) {
 
         let des = document.createElement("p")
         des.innerText = item.question.discreption;
+        des.setAttribute("class", "des");
 
         let user = document.createElement("p")
         let time = document.createElement("p")
@@ -43,6 +47,7 @@ function renderData(array) {
         let line = document.createElement("hr")
 
         let ans = document.createElement("p")
+        ans.setAttribute("class", "answer");
         ans.innerHTML = `<p style="display:inline;">${item.answer.length}</p> <p style="display:inline;color:#006400"> Answers</p>`;
         ansdiv.append(ans)
 

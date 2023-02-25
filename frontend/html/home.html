@@ -8,6 +8,13 @@
     <title>DevQuery - Where Developers share their knowledge</title>
     <link rel="stylesheet" href="../style/home.css">
     <link rel="shortcut icon" href="../favicon/mini.logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="../style/nav.css" />
+    <!----------------------------- navbar css --------------------------------->
+
 </head>
 
 <body>
@@ -15,33 +22,35 @@
     <div id="NAVBAR">
 
     </div>
+
     <div id="home">
         <div id="leftdiv">
-            <a href="#home">Home</a>
+            <a style="margin-left:10px" href="#home">Home</a>
             <div>
-                <p>PUBLIC</p>
-                <ul style="list-style-type:none;">
+                <p style="margin-left:10px">PUBLIC</p>
+                <ul id="list" style="list-style-type:none;">
                     <li><a href="">Questions</a>
                     </li>
                     <li><a href="">Tags</a>
                     </li>
-                    <li><a href="../users.html">Users</a>
+                    <li><a href="users.html">Users</a>
                     </li>
                     <li><a href="">Companies</a>
                     </li>
                 </ul>
             </div>
             <div>
-                <p>COLLECTIVES</p>
-                <a href="">Explore Collectives</a>
+                <p style="margin-left:10px;">COLLECTIVES</p>
+                <a style="margin-left:10px;" href="">Explore Collectives</a>
             </div>
             <div>
-                <p>TEAMS</p>
+                <p style="margin-left:10px;margin-top:10px">TEAMS</p>
                 <a href="">Create free team</a>
             </div>
         </div>
 
-        
+        <div class = "vertical"></div>
+
 
         <div id="renderdata">
             <div id="heading">
@@ -54,12 +63,13 @@
                     <button id="latest">Latest</button>
                     <button id="old">Old</button>
                     <button id="hot">Hot</button>
+                    
                 </div>
             </div>
             <br>
             <hr>
             <div id="renderhere">
-               
+
 
             </div>
         </div>
@@ -174,10 +184,16 @@
     </div>
 
 
+
+    <div id="FOOTER">
+        <!-- footer here copy this div -->
+    </div>
+
+
 </body>
 
 </html>
 
 
 <script src="../script/home.js"></script>
-<script src="../components/nav.js"></script>
+<script type="module" src="../script/navbar.js"></script>

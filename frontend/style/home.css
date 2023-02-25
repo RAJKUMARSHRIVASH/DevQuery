@@ -29,7 +29,8 @@ a {
     width: 100px;
     height: 40px;
     border-radius: 2px;
-    margin-top: -10px
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -43,6 +44,12 @@ button {
 
 button:hover {
     background-color: rgb(233, 121, 30);
+    cursor: pointer;
+}
+
+#askques:hover {
+    background-color: rgb(233, 121, 30);
+    cursor: pointer;
 }
 
 #rightdiv h4 {
@@ -73,7 +80,40 @@ button:hover {
 
 #leftdiv {
     position: fixed;
-    width: 14%
+    width: 14%;
+    /* border:1px solid black; */
+    height: 50%;
+    text-align: left;
+    margin: auto;
+    margin-left: -40px;
+
+
+}
+
+#leftdiv a {
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin-left: 10px;
+    /* border:1px solid black; */
+}
+
+#leftdiv p {
+
+    color: black;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+
+#rightdiv h4,
+#rightdiv a,
+#renderhere p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
 }
 
 #table,
@@ -88,10 +128,14 @@ button:hover {
     margin-left: 160px
 }
 
-li {
-    margin-left: -10px;
-    margin-bottom: 5px
+#list li,
+#leftdiv p {
+    margin-left: 40px;
+    margin-bottom: 8px;
+    margin-top: 5px
+        /* border:1px solid black; */
 }
+
 
 .questions {
     margin-left: 40px
@@ -101,6 +145,123 @@ li {
     margin-left: 20px
 }
 
+.heading,
+.des {
+    margin-bottom: 8px;
+}
+
 .heading:hover {
     cursor: pointer
+}
+
+.qbox {
+    width: 70%;
+
+}
+
+.abox {
+    width: 30%;
+    text-align: center;
+}
+
+.box {
+    /* border:1px solid black; */
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+
+.vertical {
+    border-left: 1px solid black;
+    height: 200%;
+    position: absolute;
+    margin-left: -470px;
+    left: 50%;
+}
+
+#leftdiv a:hover {
+    color: rgb(233, 121, 30);
+}
+
+@media screen and (max-width: 1033px) {
+
+    #leftdiv,
+    #rightdiv {
+        display: none
+    }
+
+    .vertical {
+        display: none
+    }
+
+    #renderdata {
+        width: 100%;
+        margin-left: -20px
+    }
+
+    #heading {
+        margin-top: 30px
+    }
+
+    #askques {
+        margin-right: 50px
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 830px) {
+
+    #leftdiv,
+    #rightdiv {
+        display: none
+    }
+}
+
+
+@media screen and (max-width: 830px) {
+
+    #leftdiv,
+    #rightdiv {
+        display: none
+    }
+
+    #renderdata {
+        width: 100%;
+        margin-left: -20px
+    }
+
+    #heading {
+        margin-top: 30px
+    }
+}
+
+@media screen and (max-width: 810px) {
+
+    #leftdiv,
+    #rightdiv {
+        display: none
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    #leftdiv,
+    #rightdiv {
+        display: none
+    }
+
+    #table {
+        margin-left: -20px
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    #leftdiv,
+    #rightdiv {
+        display: none
+    }
 }

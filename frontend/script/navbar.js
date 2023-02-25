@@ -41,3 +41,25 @@ search_btn.addEventListener("click", () => {
     search_hint.classList.toggle("open");
   }, 50);
 });
+
+
+
+const searching = document.querySelector('#searching');
+
+searching.addEventListener('click', async function (event) {
+
+  let ques = document.getElementById("ques").value
+  console.log(ques)
+  document.getElementById("ques").value = ""
+
+  let data = await fetch(`http://localhost:8000/questions/search/${ques}`);
+  let res = await data.json();
+  console.log(res)
+
+  Maindiv.innerHTML = ""
+  renderData(res);
+
+});
+
+
+
