@@ -41,3 +41,58 @@ search_btn.addEventListener("click", () => {
     search_hint.classList.toggle("open");
   }, 50);
 });
+
+
+
+const ques=document.querySelector('#ques')
+const searching = document.querySelector('#searching');
+ques.addEventListener("input",()=>{
+
+
+  searching.style.display="block";
+  searching.addEventListener('click', async function (event) {
+
+    setTimeout(() => {
+      search_hint.classList.remove("open");
+    }, 50);
+  
+    let q = document.getElementById("ques").value
+    console.log(q)
+    
+    localStorage.setItem("query",q)
+
+    if(window.location.href=="http://127.0.0.1:5500/frontend/html/home.html")
+    {
+      window.location.href="http://127.0.0.1:5500/frontend/html/home.html"
+    }
+    else window.location.href="home.html"
+  
+  });
+})
+
+
+
+
+
+
+function ifUser() {
+  let parentName = document.getElementById("user-info")
+  let name = document.getElementById("user-name");
+  let userName = localStorage.getItem("username");
+  let loginbtn = document.getElementById("in_login");
+  let signupbtn = document.getElementById("in_signup");
+  if(userName){
+    name.innerText = userName.split(" ").slice(0, 1);
+    loginbtn.innerText = "Log out"
+    signupbtn.style.display = "none"
+    if(loginbtn.innerText== "Log out"){
+      loginbtn.addEventListener("click",()=>{
+        localStorage.clear("username")        
+      })
+    }
+  }else{
+    parentName.innerHTML=""
+  }
+}
+ifUser()
+

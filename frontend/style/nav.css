@@ -36,26 +36,26 @@
       format("woff");
 }
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #f48024 #ffffff;
-  }
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #f48024 #ffffff;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 12px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #f48024;
-    border-radius: 26px;
-    border: 3px solid #ffffff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #f48024;
+  border-radius: 26px;
+  border: 3px solid #ffffff;
+}
 *,
 *::before,
 *::after {
@@ -240,7 +240,7 @@ nav {
   color: #0c0d0e;
   font-weight: bold;
 }
-.navbar-dropdown-menu ul li:hover a{
+.navbar-dropdown-menu ul li:hover a {
   background-color: #eff0f1;
   color: #0c0d0e;
   font-weight: bold;
@@ -271,7 +271,7 @@ nav {
   font-weight: 550;
   color: #6a737c;
 }
-.navbar-dropdown-menu h5 a:hover{
+.navbar-dropdown-menu h5 a:hover {
   background-color: transparent;
 }
 .navbar-dropdown-menu i {
@@ -468,11 +468,15 @@ nav {
   align-items: center;
   justify-content: center;
 }
-
+.nav-right-buttons a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .btn-login {
   background-color: #e1ecf4;
   color: #0064bd;
-  border: 1px solid #f7aa6d;
+  border: 1px solid #7aa7c7;
   padding: 0.8rem 1rem;
 }
 .btn-login:hover {
@@ -678,3 +682,17 @@ nav {
   }
 }
 /* End Media Queries */
+
+/* user name on navbar */
+
+#user-info > h3{
+  display: table-cell;
+  height: 49px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 400;
+}
+#user-info>h3>span{
+  color: #f48024;
+  font-size: 1.5rem;
+}

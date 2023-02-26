@@ -4,10 +4,47 @@ document.getElementById("askques").addEventListener("click", () => {
     window.location.href = "ask.html"
 })
 
+
 let Maindiv = document.getElementById("renderhere");
 
+let query = localStorage.getItem("query");
+
+console.log(query)
+
+if (query) {
+    callthisfun()
+
+    async function callthisfun() {
+        let data = await fetch(`http://localhost:8000/questions/search/${query}`);
+        let res = await data.json();
+        console.log(res)
+        // console.log(window.location.href)
+
+        if (res.length == 0) {
+            document.getElementById("ques").value = ""
+            Maindiv.innerHTML = ""
+            Maindiv.innerHTML = "<h3>Sorry, No questions are found</h3>"
+        }
+
+        else {
+            document.getElementById("ques").value = ""
+            Maindiv.innerHTML = ""
+            renderData(res);
+        }
+
+        localStorage.removeItem("query");
+
+    }
+
+}
+else {
+    getData()
+}
+
+
+
 // all about fetching and rendering data
-getData()
+// getData()
 async function getData() {
     let data = await fetch("http://localhost:8000/questions/");
     let res = await data.json();
@@ -33,6 +70,7 @@ function renderData(array) {
 
         let des = document.createElement("p")
         des.innerText = item.question.discreption;
+        des.setAttribute("class", "des");
 
         let user = document.createElement("p")
         let time = document.createElement("p")
@@ -43,6 +81,7 @@ function renderData(array) {
         let line = document.createElement("hr")
 
         let ans = document.createElement("p")
+        ans.setAttribute("class", "answer");
         ans.innerHTML = `<p style="display:inline;">${item.answer.length}</p> <p style="display:inline;color:#006400"> Answers</p>`;
         ansdiv.append(ans)
 
@@ -77,7 +116,7 @@ function clickedQuestion(event) {
 // Sorting
 let sortDesc = document.getElementById("latest");
 let sortAsc = document.getElementById("old");
-let mostAnswered=document.getElementById("hot");
+let mostAnswered = document.getElementById("hot");
 
 sortDesc.addEventListener("click", async () => {
     let data = await fetch("http://localhost:8000/questions/sortbydescending");

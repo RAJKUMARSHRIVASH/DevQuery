@@ -58,15 +58,16 @@ let navbar = () => {
       </div>
       <div class="nav-links">
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="../html/home.html" id="in_quetions">Quetions</a></li>
+          <li><a href="../html/users.html" id="users-page">Users</a></li>
+          <li><a href="../html/home.html" id="in_quetions">Questions</a></li>
           <li><a href="../html/ask.html" id="in_ask">Ask</a></li>
         </ul>
       </div>
       <div class="navbar-search">
         <div class="searchbox">
           <i class="fas fa-search"></i>
-          <input type="text" placeholder="Search a Query..." />
+          <input id="ques" type="text" placeholder="Search a Query..." />
+          <button id="searching" style="background-color:rgb(10, 149, 255);display:none;border:0px;width:60px;height:20px;border-radius:3px;color:white" >Search</button>
         </div>
         <div class="searchbox-hints">
           <div class="searcharrow"></div>
@@ -108,6 +109,7 @@ let navbar = () => {
         <a href="../html/login.html" class="btn btn-login" id="in_login">Log in</a>
         <a href="../html/register.html" class="btn btn-register" id="in_signup">Sign up</a>
       </div>
+      <div id="user-info"><h3>Hello<br><span id="user-name"></span></h3></div>
     </nav>
   </div>
 </header>
