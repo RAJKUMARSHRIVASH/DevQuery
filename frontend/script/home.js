@@ -9,8 +9,8 @@ let Maindiv = document.getElementById("renderhere");
 
 let query = localStorage.getItem("query");
 
-// const baseURL = "https://devquery.onrender.com"
-const baseURL = "http://localhost:8000"
+const baseURL = "https://devquery.onrender.com"
+// const baseURL = "http://localhost:8000"
 if (query) {
     console.log(query)
     callthisfun(query)
@@ -49,7 +49,7 @@ else {
 async function getData() {
     let data = await fetch("https://devquery.onrender.com/questions/");
     let res = await data.json();
-    console.log(res)
+    // console.log(res)
     renderData(res);
 }
 
