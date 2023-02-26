@@ -69,6 +69,10 @@ ques.addEventListener("input",()=>{
     {
       window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
     }
+    else if(window.location.href=="https://rococo-rolypoly-a926ac.netlify.app")
+    {
+      window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
+    }
     else window.location.href="home.html" 
   
   });
