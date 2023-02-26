@@ -57,7 +57,7 @@ ques.addEventListener("input",()=>{
     }, 50);
   
     let q = document.getElementById("ques").value
-    console.log(q)
+    // console.log(q)
     
     localStorage.setItem("query",q)
 
