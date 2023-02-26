@@ -44,28 +44,36 @@ search_btn.addEventListener("click", () => {
 
 
 
-
+const ques=document.querySelector('#ques')
 const searching = document.querySelector('#searching');
+ques.addEventListener("input",()=>{
 
-searching.addEventListener('click', async function (event) {
+  searching.style.display="block";
+  searching.addEventListener('click', async function (event) {
 
-  setTimeout(() => {
-    search_hint.classList.remove("open");
-  }, 50);
-
-  let ques = document.getElementById("ques").value
-  console.log(ques)
-  document.getElementById("ques").value = ""
-
-  let data = await fetch(`http://localhost:8000/questions/search/${ques}`);
-  let res = await data.json();
-  console.log(res)
-
-  Maindiv.innerHTML = ""
-  renderData(res);
+    setTimeout(() => {
+      search_hint.classList.remove("open");
+    }, 50);
   
+  
+  
+    let q = document.getElementById("ques").value
+    console.log(q)
+    
+  
+    let data = await fetch(`http://localhost:8000/questions/search/${q}`);
+    let res = await data.json();
+    console.log(res)
+    window.location.href="html/home.html"
+    document.getElementById("ques").value = ""
+    Maindiv.innerHTML = ""
+    renderData(res);
+    
+  
+  });
+})
 
-});
+
 
 
 
