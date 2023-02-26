@@ -9,7 +9,14 @@ a {
 
 #home {
   display: flex;
-  padding: 5%;
+  padding: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+}
+button{
+  border-radius: 3px;
+  transition: all 0.5s;
 }
 
 #rightdiv {
@@ -17,7 +24,7 @@ a {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 5px;
   height: 100%;
-  margin-left: 0px;
+  margin-left: 20px;
 }
 
 #askques {
@@ -26,7 +33,7 @@ a {
   border: 0px;
   width: 100px;
   height: 40px;
-  border-radius: 2px;
+  border-radius: 0.3rem;
   margin-top: -10px;
   margin-bottom: 10px;
 }
@@ -82,13 +89,16 @@ a {
 
 #leftdiv {
   position: fixed;
-  width: 14%;
-  /* border-right: double;
-  height: 100%; */
+  top: 50px;
+  left: 0;
+  padding: 50px 0 0 20px;
+  width: 210px;
+  border-right: 1px solid;
+  height: 100%;
   text-align: left;
   margin: auto;
-  margin-left: -40px;
-  margin-top: -14px;
+  /* margin-left: -40px; */
+  /* margin-top: 0px; */
 }
 
 #leftdiv a {
@@ -199,7 +209,7 @@ a {
   }
 
   #askques {
-    margin-right: 50px;
+    margin-right: 3.5em;
   }
 }
 
