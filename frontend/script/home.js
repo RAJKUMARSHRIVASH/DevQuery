@@ -9,13 +9,14 @@ let Maindiv = document.getElementById("renderhere");
 
 let query = localStorage.getItem("query");
 
-console.log(query)
+
 
 if (query) {
-    callthisfun()
+    console.log(query)
+    callthisfun(query)
 
-    async function callthisfun() {
-        let data = await fetch(`http://localhost:8000/questions/search/${query}`);
+    async function callthisfun(query) {
+        let data = await fetch(`https://devquery.onrender.com/questions/search/${query}`);
         let res = await data.json();
         console.log(res)
         // console.log(window.location.href)
@@ -46,7 +47,7 @@ else {
 // all about fetching and rendering data
 // getData()
 async function getData() {
-    let data = await fetch("http://localhost:8000/questions/");
+    let data = await fetch("https://devquery.onrender.com/questions/");
     let res = await data.json();
     console.log(res)
     renderData(res);
@@ -119,7 +120,7 @@ let sortAsc = document.getElementById("old");
 let mostAnswered = document.getElementById("hot");
 
 sortDesc.addEventListener("click", async () => {
-    let data = await fetch("http://localhost:8000/questions/sortbydescending");
+    let data = await fetch("https://devquery.onrender.com/questions/sortbydescending");
     let res = await data.json();
     console.log(res)
     Maindiv.innerHTML = ""
@@ -128,7 +129,7 @@ sortDesc.addEventListener("click", async () => {
 
 
 sortAsc.addEventListener("click", async () => {
-    let data = await fetch("http://localhost:8000/questions/sortbyascending");
+    let data = await fetch("https://devquery.onrender.com/questions/sortbyascending");
     let res = await data.json();
     console.log(res)
     Maindiv.innerHTML = ""
@@ -137,7 +138,7 @@ sortAsc.addEventListener("click", async () => {
 
 
 mostAnswered.addEventListener("click", async () => {
-    let data = await fetch("http://localhost:8000/questions/sortbyanswercount");
+    let data = await fetch("https://devquery.onrender.com/questions/sortbyanswercount");
     let res = await data.json();
     console.log(res)
     Maindiv.innerHTML = ""

@@ -93,8 +93,8 @@ button{
   left: 0;
   padding: 50px 0 0 20px;
   width: 210px;
-  border-right: 1px solid;
-  height: 100%;
+  /* border-right: 1px solid;
+  height: 100%; */
   text-align: left;
   margin: auto;
   /* margin-left: -40px; */
