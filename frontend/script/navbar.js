@@ -44,27 +44,33 @@ search_btn.addEventListener("click", () => {
 
 
 
-
+const ques=document.querySelector('#ques')
 const searching = document.querySelector('#searching');
+ques.addEventListener("input",()=>{
 
-searching.addEventListener('click', async function (event) {
-  if(searching.value!==""){
+
+  searching.style.display="block";
+  searching.addEventListener('click', async function (event) {
+
     setTimeout(() => {
       search_hint.classList.remove("open");
     }, 50);
   
-    let ques = document.getElementById("ques").value
-    console.log(ques)
-    document.getElementById("ques").value = ""
+    let q = document.getElementById("ques").value
+    console.log(q)
+    
+    localStorage.setItem("query",q)
+
+    if(window.location.href=="http://127.0.0.1:5500/frontend/html/home.html")
+    {
+      window.location.href="http://127.0.0.1:5500/frontend/html/home.html"
+    }
+    else window.location.href="home.html"
   
-    let data = await fetch(`http://localhost:8000/questions/search/${ques}`);
-    let res = await data.json();
-    console.log(res)
-  
-    Maindiv.innerHTML = ""
-    renderData(res);  
-  }
-});
+  });
+})
+
+
 
 
 
