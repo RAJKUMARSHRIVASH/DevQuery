@@ -24,7 +24,7 @@ const authenticate = (req,res,next)=>{
                 if(req.path == `/addans/${req.params.id}`){
                     req.body.name = decode.name;
                     req.body.time = Date.now();
-                    req.body.like = 0
+                    req.body.like = []
                 }
             //   const userRole = decode.role;
             // //   console.log(userRole)
