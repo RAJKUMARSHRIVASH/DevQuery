@@ -114,6 +114,9 @@
             localStorage.setItem("question_id", res._id);
             location.assign("./questions.html");
           }
+          else {
+            location.assign("./login.html");
+          }
         } catch (error) {
           console.log(error);
         }
