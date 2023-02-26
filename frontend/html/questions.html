@@ -85,9 +85,10 @@
       let token = localStorage.getItem("token");
       let question_id = localStorage.getItem("question_id");
       // console.log(res)
-      try {
+      if(token && question_id){
+        try {
         let post_question = await fetch(
-          `http://localhost:8000/questions/addans/${question_id}`,
+          `https://devquery.onrender.com/questions/addans/${question_id}`,
           {
             method: "POST",
             headers: {
@@ -104,6 +105,9 @@
         }
       } catch (error) {
         console.log(error);
+      }
+      }else{
+        location.assign("../html/login.html")
       }
     });
   </script>

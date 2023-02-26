@@ -9,6 +9,10 @@ quesRoute.get("/", async (req, res) => {
     let data = await QuesModel.find();
     res.send(data)
 })
+// quesRoute.delete("/", async (req, res) => {
+//     let data = await QuesModel.remove();
+//     res.send("done")
+// })
 
 quesRoute.get("/sortbydescending", async (req, res) => {
     let data = await QuesModel.find().sort({ posted: -1 })
@@ -61,7 +65,7 @@ quesRoute.post("/addans/:id", authenticate, async (req, res) => {
         res.json({ "mas": "You cann't answer your own questions" })
     }
     try {
-        const add_ans = await QuesModel.updateOne({ "_id": quesID }, { $push: { "answer": { name, answer, userID, time, like } } })
+        const add_ans = await QuesModel.updateOne({ "_id": quesID }, { $push: { "answer": { name, answer, userID, time, like, "is_liked" : false } } })
         res.json(add_ans)
     } catch (error) {
         console.log(error)
@@ -82,6 +86,50 @@ quesRoute.get("/:id",validate, async (req, res) => {
         }
     }else{
         res.json({data})
+    }
+})
+quesRoute.post("/like/:id",validate, async (req, res) => {
+    let {i, userID} = req.body;
+    let q = req.params.id
+    if(req.body.isLogged){
+        res.json({"msg": "not logged"})
+    }else{
+        let own = false;
+        console.log(q, i, userID)
+        let data = await QuesModel.aggregate([
+            { $match: { _id: q} },
+            { $project: { answer: { $arrayElemAt: [ "$answer", i ] } } },
+            { $addFields: { 
+                likeIndex: { $indexOfArray: [ "$answer.like", userID ] }
+            }},
+            { $project: { 
+                answer: { 
+                    $cond: {
+                      if: { $ne: [ "$likeIndex", -1 ] }, 
+                      then: { 
+                          $filter: { 
+                              input: "$answer.like", 
+                              as: "like", 
+                              cond: { $ne: [ "$$like", userID ] } 
+                          }
+                      },
+                      else: { 
+                          $concatArrays: [ "$answer.like", [userID] ] 
+                      }
+                    }
+                }
+            }},
+            { $replaceRoot: { newRoot: { $mergeObjects: [ "$$ROOT", "$answer" ] } } }, 
+            { $project: { answer: 0 } } 
+        ]);
+        console.log(data);
+
+        if(req.body.userID == data.userID){
+            own = true;
+            res.json({data, own})
+        }else{
+            res.json({data})
+        }
     }
     
 })
