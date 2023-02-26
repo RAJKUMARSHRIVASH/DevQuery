@@ -48,6 +48,7 @@ const ques=document.querySelector('#ques')
 const searching = document.querySelector('#searching');
 ques.addEventListener("input",()=>{
 
+
   searching.style.display="block";
   searching.addEventListener('click', async function (event) {
 
