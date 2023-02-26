@@ -35,13 +35,14 @@ app.get('/auth/google',
 
 app.get('/auth/google/callback', 
   passport.authenticate('google', {
-     failureRedirect: 'http://localhost:8000/auth/login.html',
+     failureRedirect: 'https://rococo-rolypoly-a926ac.netlify.app/html/login.html',
      session:false }),
   function(req, res) {
     // Successful authentication, redirect home.
-      // console.log(req.user)
-    res.cookie("user_detail",req.user)
-    res.redirect('http://localhost:8000/auth/index.html');
+       console.log(req.user)
+      res.cookie("user",req.user)
+      res.redirect("https://rococo-rolypoly-a926ac.netlify.app/")
+    
   });
 
       //----------------Facebook Oauth----------//
@@ -54,12 +55,13 @@ app.get('/auth/google/callback',
   
 app.get("/auth/facebook/callback",
     Passport.authenticate("facebook",{
-        successRedirect:"http://localhost:8000/auth/index.html",
-        failureRedirect:"http://localhost:8000/auth/index.html",
+        failureRedirect:"https://rococo-rolypoly-a926ac.netlify.app/html/login.html",
         session:false
     }),
     function(req, res) {
-          //console.log(req.user)
+          console.log(req.user)
+          res.cookie(req.user)
+          res.redirect("https://rococo-rolypoly-a926ac.netlify.app/")
       });    
 
 

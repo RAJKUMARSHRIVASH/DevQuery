@@ -38,26 +38,26 @@ githubRoute.get("/github",async (req, res) => {
       code : code
      })  
   }).then((res)=>res.json())
-
-  // console.log(accessToken)
+   const Token = accessToken.access_token
+    //console.log(Token)
 
   const userDetails = await fetch("https://api.github.com/user", {
     headers : {
         Authorization: `Bearer ${accessToken.access_token}`
     }
 }).then((res) => res.json())
-  console.log(userDetails.name)
-  res.redirect("http://localhost:8000/auth/index.html")
+   //console.log(userDetails.name)
+   
+    // let payload = {
+    //   "username":userDetails.name,
+    //   "token":Token
+    // }
+  res.cookie("token",Token,"username",userDetails.name)
+  res.redirect("https://rococo-rolypoly-a926ac.netlify.app/")
   
 })
 
 
-// githubRoute.get("/data",(req,res)=>{
-//   const data = req.cookies.data
-//   console.log(data)
-//   res.json(data)
- 
-// })
 
 
 
