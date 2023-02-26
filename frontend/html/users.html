@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Users</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
@@ -34,14 +34,12 @@
             border-right: 1.5px solid;
             border-color: rgb(170, 166, 165);
             cursor: pointer;
-
         }
 
         #leftdiv a {
             padding: 5px;
             text-decoration: none;
             color: black;
-
         }
 
         #leftdiv>a {
@@ -51,12 +49,10 @@
             /* margin-bottom: 5px; */
             font-size: medium;
             margin-bottom: 10px;
-
         }
 
         #leftdiv>a:hover {
             background-color: bisque;
-
         }
 
         #leftdiv p {
@@ -64,12 +60,10 @@
             margin-bottom: 5px;
             font-size: medium;
             padding: 5px;
-
         }
 
         #leftdiv p:hover {
             background-color: bisque;
-
         }
 
         #leftdiv ul li {
@@ -90,7 +84,6 @@
 
         .Collectives:hover {
             background-color: rgb(222, 226, 226);
-
         }
 
         /* --------------------- */
@@ -145,14 +138,12 @@
 
         .user-body-filter input::-webkit-input-placeholder {
             font-size: medium;
-
         }
 
         .user-body-sorting {
             position: absolute;
             right: 0;
             border-collapse: collapse;
-
         }
 
         .user-body-sorting>div {
@@ -161,7 +152,6 @@
             color: rgb(106, 103, 103);
             padding: 10px;
             cursor: pointer;
-
         }
 
         .user-body-sorting>div:hover {
@@ -196,24 +186,20 @@
 
         .user-box>div img {
             width: 50px;
-
         }
 
         .user-box>div>div {
             display: flex;
             flex-direction: column;
             gap: 5px;
-
         }
 
         .user-box>div>div p {
             color: rgb(7, 7, 188);
-
         }
 
         /* for medium / tab screen size */
-        @media screen and (min-width : 481px) and (max-width : 800px) {
-
+        @media screen and (min-width: 481px) and (max-width: 800px) {
             #user-body {
                 width: 80%;
                 margin-left: 10%;
@@ -227,13 +213,11 @@
 
             .user-body-sorting {
                 position: absolute;
-
             }
 
             .user-body-sorting>div {
                 padding: 5px;
                 /* font-size: medium; */
-
             }
 
             .user-box {
@@ -246,8 +230,7 @@
         }
 
         /* for mobile / small screen size and lower */
-        @media screen and (min-width : 0px) and (max-width : 480px) {
-
+        @media screen and (min-width: 0px) and (max-width: 480px) {
             #user-body {
                 width: 80%;
                 margin-left: 8%;
@@ -261,13 +244,11 @@
 
             .user-body-sorting {
                 position: static;
-
             }
 
             .user-body-sorting>div {
                 padding: 5px;
                 font-size: small;
-
             }
 
             .user-box {
@@ -278,23 +259,67 @@
                 display: none;
             }
         }
+
+        /* Center the preloader */
+        #preloader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fafafb;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            overflow: hidden;
+            scrollbar-width: none;
+        }
+
+        /* Rotate the loading icon */
+        .preloader-icon {
+            animation: spin 1s infinite linear;
+            font-size: 4rem;
+            color: #f48024;
+        }
+
+        /* Rotate the preloader */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide the preloader when the page is loaded */
+        .loaded #preloader {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
     </style>
 </head>
 
 <body>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <i class="preloader-icon fa fa-spinner"></i>
+    </div>
     <div id="NAVBAR">
         <!-- navbar here "Copy this div" -->
     </div>
-    <div class="cntnr" style="height: auto;">
-
+    <div class="cntnr" style="height: auto">
         <!-- main body -->
         <section id="user-body">
             <h1>Users</h1>
             <div class="row first">
                 <div class="user-body-filter row">
-                    <img src="../imgs/search.png" alt="search">
+                    <img src="../imgs/search.png" alt="search" />
                     <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user"
-                        oninput="search()">
+                        oninput="search()" />
                 </div>
                 <div class="user-body-sorting row">
                     <div>Reputation</div>
@@ -314,15 +339,11 @@
             <a href="#home">Home</a>
             <div>
                 <p>PUBLIC</p>
-                <ul style="list-style-type:none;">
-                    <li><a href="">Questions</a>
-                    </li>
-                    <li><a href="">Tags</a>
-                    </li>
-                    <li><a href="../html/users.html">Users</a>
-                    </li>
-                    <li><a href="">Companies</a>
-                    </li>
+                <ul style="list-style-type: none">
+                    <li><a href="home.html">Questions</a></li>
+                    <li><a href="">Tags</a></li>
+                    <li><a href="../html/users.html">Users</a></li>
+                    <li><a href="">Companies</a></li>
                 </ul>
             </div>
             <div class="other-list">
@@ -340,33 +361,44 @@
     <div id="FOOTER">
         <!-- footer here copy this div -->
     </div>
+    <script>
+        // Hide the preloader when the page is loaded
+        window.addEventListener("load", () => {
+            document.querySelector("body").classList.add("loaded");
+        });
+    </script>
 </body>
 
 </html>
 <script type="module" src="../script/navbar.js"></script>
 <script>
-
-    let baseURL = "http://localhost:8000";
-    let bag = []
+    // let baseURL = "http://localhost:8000";
+    let baseURL = "https://devquery.onrender.com";
+    let bag = [];
     let getAllUsers = async () => {
         try {
             let fData = await fetch(`${baseURL}/users/getall`);
             const users = await fData.json();
-            bag = users;    // for searching functionality;
+            bag = users; // for searching functionality;
             display(users);
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     }
     getAllUsers();
 
     function display(users) {
+        document.querySelector(".user-box").innerHTML = "";
 
         document.querySelector(".user-box").innerHTML = "";
-        
+
         let basket = document.querySelector(".user-box");
         for (const user of users) {
             let div1 = document.createElement("div");
+            div1.addEventListener("click", () => {
+                window.location.href = "../ChatApp/frontend/public/index.html";
+            })
+
             let div2 = document.createElement("div");
 
             let img = document.createElement("img");
@@ -387,11 +419,10 @@
 
     async function search() {
         let input = document.querySelector(".user-body-filter-searchbox").value;
-        let newData = bag.filter(element => {
+        let newData = bag.filter((element) => {
             return element.name.toLowerCase().includes(input.toLowerCase());
         });
         display(newData);
-
     }
 
 </script>

@@ -1,0 +1,27 @@
+{
+  "name": "chatapp_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheeluofficial/ChatApp_frontEnd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheeluofficial/ChatApp_frontEnd/issues"
+  },
+  "homepage": "https://github.com/sheeluofficial/ChatApp_frontEnd#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.6.0"
+  }
+}

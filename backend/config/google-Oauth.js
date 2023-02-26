@@ -8,24 +8,30 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8000/auth/google/callback"
+    callbackURL: "https://devquery.onrender.com/auth/google/callback"
   },
  async  function(accessToken, refreshToken, profile, cb) {
-     let email = profile._json.email
+    //  console.log(profile)
+    let email = profile._json.email
     let name = profile._json.name
+    let payload = {
+      "username":name,
+      "token":accessToken
+    }
+    // console.log(payload)
     let x = await UserModel.findOne({email});
     if(x){
-      return cb(null, x);
+      return cb(null, payload);
     }
    const user = new UserModel({
     name,
     email,
     password: uuidv4()
    })
-   await user.save()
-  //  console.log(profile)
-      return cb(null, user);
+   await user.save();
+    return cb(null, payload);
   }
+  
 ));
 
 module.exports = passport;

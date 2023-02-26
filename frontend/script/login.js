@@ -1,4 +1,5 @@
 
+
 let loginForm = document.querySelector("form")
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault()
@@ -8,7 +9,7 @@ let loginForm = document.querySelector("form")
             for (let i = 0; i < allInputTags.length; i++) {
                 userObj[allInputTags[i].id] = allInputTags[i].value
             }
-            let login_request = await fetch("http://localhost:8000/users/login", {
+            let login_request = await fetch("https://devquery.onrender.com/users/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

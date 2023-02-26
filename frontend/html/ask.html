@@ -1,90 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ask Question</title>
-    <link rel="stylesheet" href="../style/ask.css">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-        <!----------------------------- navbar css --------------------------------->
-        <link rel="stylesheet" href="../style/nav.css" />
-        <!----------------------------- navbar css --------------------------------->
-</head>
-<body>
+    <link rel="stylesheet" href="../style/ask.css" />
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="../style/nav.css" />
+    <!----------------------------- navbar css --------------------------------->
+  </head>
+  <body>
+    <div id="preloader">
+      <i class="preloader-icon fa fa-spinner"></i>
+      <!-- this is the preloader -->
+    </div>
+
     <div id="NAVBAR">
-        <!-- navbar here "Copy this div" -->
-      </div>
+      <!-- navbar here "Copy this div" -->
+    </div>
     <div id="ask">
-        <h1>Ask a public question</h1>
-        <form action="">
-            <div class="heading">
-                <h3>Title</h3>
-                <p>Be specific and imagine you’re asking a question to another person.</p>
-                <input type="text" name="heading" id="heading" placeholder="e.g. Is there an R function for finding the index of an element in a vector?" required>
-                <div id="question_body">
-                    <h3>What are the details of your problem?</h3>
-                    <p>Introduce the problem and expand on what you put in the title. Minimum 20 characters.</p>
-                    <div id="editor-container">
-                    </div>
-                </div>
-                <button id="submit">Post Your Question</button>
-            </div>
-        </form>
+      <h1>Ask a public question</h1>
+      <form action="">
+        <div class="heading">
+          <h3>Title</h3>
+          <p>
+            Be specific and imagine you’re asking a question to another person.
+          </p>
+          <input
+            type="text"
+            name="heading"
+            id="heading"
+            placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
+            required
+          />
+          <div id="question_body">
+            <h3>What are the details of your problem?</h3>
+            <p>
+              Introduce the problem and expand on what you put in the title.
+              Minimum 20 characters.
+            </p>
+            <div id="editor-container"></div>
+          </div>
+          <button id="submit">Post Your Question</button>
+        </div>
+      </form>
     </div>
     <div id="FOOTER">
-        <!-- footer here copy this div -->
+      <!-- footer here copy this div -->
     </div>
+    <script>
+      // Hide the preloader when the page is loaded
+      window.addEventListener("load", () => {
+        document.querySelector("body").classList.add("loaded");
+      });
+    </script>
     <script type="module" src="../script/navbar.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script type="module" src="../script/ask.js"></script>
     <script>
-        var quill = new Quill('#editor-container', {
-  modules: {
-    toolbar: [
-      [{ header: [1, 2,3, 4, 5, 6, false] }],
-      ['bold', 'italic', 'underline'],
-      ['code-block'],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }]
-    ]
-  },
-  placeholder: 'Explain Question in details...',
-  theme: 'snow'
-});
-document.querySelector("form").addEventListener("submit", async (e)=>{
-    e.preventDefault()
-    let heading = document.getElementById("heading").value;
-    let innerhtml = quill.root.innerHTML;
-    let discreption = quill.root.innerText;
-    discreption = discreption.replace(/[\r\n]\s*[\r\n]/g, ' ');
-    discreption = discreption.replace(/\s\s+/g, ' ');
-    discreption = discreption.slice(0, 130);
-    discreption += "...";
-    console.log(discreption)
-    let qObj = {
-        heading,
-        discreption,
-        innerhtml
-    }
-    let token = localStorage.getItem("token")
-    try {
-        let post_question = await fetch("http://localhost:8000/questions/addquestion", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "authorization": token
-                },
-                body: JSON.stringify({question: qObj})
-            })
-            const res = await post_question.json()
-            if(res._id){
-                localStorage.setItem("question_id", res._id);
-                location.assign("questions.html")
+      var quill = new Quill("#editor-container", {
+        modules: {
+          toolbar: [
+            [{ header: [1, 2, 3, 4, 5, 6, false] }],
+            ["bold", "italic", "underline"],
+            ["code-block"],
+            [{ list: "ordered" }, { list: "bullet" }],
+          ],
+        },
+        placeholder: "Explain Question in details...",
+        theme: "snow",
+      });
+      document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let heading = document.getElementById("heading").value;
+        let innerhtml = quill.root.innerHTML;
+        let discreption = quill.root.innerText;
+        discreption = discreption.replace(/[\r\n]\s*[\r\n]/g, " ");
+        discreption = discreption.replace(/\s\s+/g, " ");
+        discreption = discreption.slice(0, 130);
+        discreption += "...";
+        console.log(discreption);
+        let qObj = {
+          heading,
+          discreption,
+          innerhtml,
+        };
+        let token = localStorage.getItem("token");
+        try {
+          let post_question = await fetch(
+            "http://localhost:8000/questions/addquestion",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                authorization: token,
+              },
+              body: JSON.stringify({ question: qObj }),
             }
-    } catch (error) {
-        console.log(error)
-    }
-})
+          );
+          const res = await post_question.json();
+          if (res._id) {
+            localStorage.setItem("question_id", res._id);
+            location.assign("questions.html");
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

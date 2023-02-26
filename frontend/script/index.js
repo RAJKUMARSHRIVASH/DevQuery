@@ -7,6 +7,7 @@ window.onload = ()=>{
   document.getElementById("id_askbtn").href = "./html/ask.html"
   document.getElementById("in_login").href = "./html/login.html"
   document.getElementById("in_signup").href = "./html/register.html"
+  document.getElementById("users-page").href = "./html/users.html"
 }
 
 /*text changing*/

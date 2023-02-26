@@ -7,7 +7,7 @@ for(let i=0;i<allInputTags.length;i++){
     userObj[allInputTags[i].id] = allInputTags[i].value
 }
 try{
-        let register_request = await fetch("http://localhost:8000/users/register",{
+        let register_request = await fetch("https://devquery.onrender.com/users/register",{
             method:"POST",
             headers:{
                "Content-Type": "application/json"
@@ -28,11 +28,5 @@ try{
     })
 
 
-// document.querySelector(".git").addEventListener("click",git())
- async function git(){
-    const fetchData = await fetch("https://localhost:8000/auth/github")
-    const res = await fetchData.json()
-    localStorage.setItem("cookie",JSON.stringify(res))
-    console.log(res)
-  }
+
   
