@@ -1,40 +1,3 @@
-@font-face {
-  font-family: "Source Sans Pro Bold";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Source Sans Pro Bold Bold"), local("SourceSans Pro Bold-Bold"),
-    local("Source Sans Pro Bold 700"), local("SourceSans Pro Bold-700"),
-    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-bold-webfont.woff?v=f52ccc0bbce9")
-      format("woff");
-}
-@font-face {
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
-    local("Roboto Slab 400"), local("RobotoSlab-400"), local("Roboto Slab"),
-    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-regular-webfont.woff?v=a75088a46d79")
-      format("woff");
-}
-@font-face {
-  font-family: "Roboto Slab Bold";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Roboto Slab Bold Bold"), local("RobotoSlab Bold-Bold"),
-    local("Roboto Slab Bold 700"), local("RobotoSlab Bold-700"),
-    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-bold-webfont.woff?v=719d1c709127")
-      format("woff");
-}
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Source Sans Pro Regular"), local("SourceSans Pro-Regular"),
-    local("Source Sans Pro 400"), local("SourceSans Pro-400"),
-    local("Source Sans Pro"),
-    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-regular-webfont.woff?v=993db0ec4347")
-      format("woff");
-}
 *,
 *::before,
 *::after {
@@ -49,7 +12,7 @@ html {
   color: #242729;
 }
 
-.container {
+.bag {
   width: 100%;
   max-width: 126.4rem;
   margin: 0 auto;
@@ -94,7 +57,7 @@ img {
   color: #fff;
 }
 
-/* top-section */
+/* --------------top-------section--------------- */
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
@@ -145,10 +108,11 @@ img {
 }
 
 .top-section {
-  background-image: url("https://cdn.sstatic.net/Img/home/illo-hero-full.svg?v=e2018a5f9272");
+  background-image: url("../imgs/Untitled_design-removebg.svg");
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position:  center;
   background-color: #ffcf10;
+  background-size: cover;
   height: 80vh;
   display: flex;
   justify-content: center;
@@ -163,7 +127,7 @@ img {
   margin: 0 3rem;
 }
 
-.section-title {
+.titlesection {
   color: #242729;
   font-family: "Roboto Slab Bold", serif;
   font-weight: 700;
@@ -172,7 +136,7 @@ img {
   text-align: center;
   max-width: 100%;
 }
-.section-title span {
+.titlesection span {
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
     sans-serif;
@@ -204,105 +168,20 @@ img {
   margin-left: 0.5rem;
 }
 
-/*End top-section*/
+/* --------------top-------section----Ends----------- */
 
-/* For Developers*/
-
-.section-head {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #242729;
-}
-
-.section-title {
-  font-size: 3.4rem;
-  font-family: "Roboto Slab Bold", serif;
-  font-weight: 700;
-}
-
-.section-line {
-  width: 64px;
-  height: 8px;
-  margin: 3rem auto;
-  border-radius: 100rem;
-  background-color: #f48024;
-}
-
-.section-description {
-  font-size: 1.7rem;
-  max-width: 52.6rem;
-  text-align: center;
-}
-.section-description a {
-  color: #f48024;
-}
-
-.developers .options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.developers .option {
-  flex-basis: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
-    0 3px 8px rgba(0, 0, 0, 0.09);
-  border-radius: 0.7rem;
-}
-.developers .option:nth-child(1),
-.developers .option:nth-child(3) {
-  margin-top: 12rem;
-}
-.developers .option:hover {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09),
-    0 4px 13px rgba(0, 0, 0, 0.13);
-}
-.developers .option-title {
-  color: #242729;
-  font-size: 2.1rem;
-  font-weight: 400;
-  margin: 2rem 0;
-}
-.developers .option-description {
-  font-size: 1.4rem;
-  font-weight: 400;
-  text-align: center;
-  color: #242729;
-}
-.developers .option-description a {
-  color: #f48024;
-}
-.developers .option-button {
-  margin: 3rem 0 2rem;
-}
-.developers .option-link {
-  color: #fff;
-}
-
-/* End For Developers*/
-
-/*For Businesses*/
+/*-------------------------Businesses-------------------------*/
 
 .businesses {
   background-color: #f7f6f9;
   padding: 10rem 0;
 }
-.businesses .options {
+.businesses .optss {
   margin-top: 6rem;
   display: flex;
   justify-content: space-evenly;
 }
-.businesses .option {
+.businesses .opt {
   flex-basis: 30%;
   display: flex;
   align-items: center;
@@ -313,7 +192,7 @@ img {
     0 3px 8px rgba(0, 0, 0, 0.09);
   border-radius: 0.7rem;
 }
-.businesses .option-description {
+.businesses .DesForOpt {
   font-size: 1.7rem;
   font-weight: 400;
   margin-left: 1rem;
@@ -323,249 +202,99 @@ img {
   color: #f48024;
 }
 
-/* End For Businesses */
+/*----------------Businesses-------Ends-----------*/
 
-/* Teams*/
-.for-teams {
-  background-image: url("https://cdn.sstatic.net/Img/product/teams/illo-teams-pricing.svg?v=8afb8ac7c580");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-color: #2b2d6e;
-  padding: 12rem 0;
-}
-.teams .options {
-  margin-top: 6rem;
+/*----------------- Developer ----------------*/
+
+.head-sec {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #242729;
 }
-.teams .option {
+
+.titlesection {
+  font-size: 3.4rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 700;
+}
+
+.linesec {
+  width: 64px;
+  height: 8px;
+  margin: 3rem auto;
+  border-radius: 100rem;
+  background-color: #f48024;
+}
+
+.descriptionSec {
+  font-size: 1.7rem;
+  max-width: 52.6rem;
+  text-align: center;
+}
+.descriptionSec a {
+  color: #f48024;
+}
+
+.developers .optss {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.developers .opt {
   flex-basis: 30%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3.5rem;
+  padding: 3rem;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
     0 3px 8px rgba(0, 0, 0, 0.09);
   border-radius: 0.7rem;
 }
-.teams .option-description {
-  font-size: 1.7rem;
+.developers .opt:nth-child(1),
+.developers .opt:nth-child(3) {
+  margin-top: 12rem;
+}
+.developers .opt:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09),
+    0 4px 13px rgba(0, 0, 0, 0.13);
+}
+.developers .optTIT {
+  color: #242729;
+  font-size: 2.1rem;
   font-weight: 400;
-  margin-left: 1rem;
+  margin: 2rem 0;
+}
+.developers .DesForOpt {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
   color: #242729;
 }
-.teams .option-link {
+.developers .DesForOpt a {
   color: #f48024;
 }
-
-.teams-head {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-}
-
-.teams-title {
-  font-size: 3.4rem;
-  font-family: "Roboto Slab Bold", serif;
-  font-weight: bold;
-  max-width: 55rem;
-}
-
-.teams-description {
-  font-size: 1.7rem;
-  max-width: 52.6rem;
-  text-align: center;
+.developers .optBTN {
   margin: 3rem 0 2rem;
 }
-
-.teams-plan {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin: 10rem auto 0;
-}
-
-.card {
-  flex: 1 auto;
-  flex-basis: calc(33% - 4rem);
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.05),
-    0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 3rem;
-  border-radius: 0.7rem;
-  margin: 2rem;
-  position: relative;
-}
-
-.card-body {
-  margin: 4rem 0;
-}
-
-.plan-type {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-family: "Roboto Slab", serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  border-radius: 0.3rem;
-}
-
-.card-basic .plan-type {
-  background-color: #c8ccd0;
-  color: #2f3337;
-}
-.card-basic .btn-card {
-  background-color: #d6d9dc;
-  color: #2f3337;
-}
-
-.card-business .plan-type {
-  background-color: #3c4146;
-  color: #fff;
-}
-.card-business .btn-card {
-  background-color: #3c4146;
+.developers .option-link {
   color: #fff;
 }
 
-.card-enterprise .plan-type {
-  background-color: #2b2d6e;
-  color: #fff;
-}
-.card-enterprise .btn-card {
-  background-color: #2b2d6e;
-  color: #fff;
-}
+/*---------------------Developers--------------Ends--------------*/
 
-.card-most-used {
-  position: absolute;
-  width: 90%;
-  left: 5%;
-  top: -3.7rem;
-  padding: 1rem 2rem;
-  background-color: #e4e6e8;
-  color: #242729;
-  font-size: 1.2rem;
-  font-family: "Source Sans Pro Bold", sans-serif;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #d6d9dc;
-  border-top-left-radius: 0.7rem;
-  border-top-right-radius: 0.7rem;
-}
-
-.plan-description {
-  color: #242729;
-  font-size: 1.5rem;
-  font-family: "Roboto Slab", serif;
-  font-weight: 500;
-  margin-top: 2rem;
-}
-
-.plan-price {
-  border-bottom: 1px solid #e4e6e8;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-}
-
-.price {
-  font-size: 3.4rem;
-  font-family: "Roboto Slab Bold", serif;
-  font-weight: 900;
-  color: #242729;
-}
-
-.per {
-  color: #9199a1;
-  font-size: 1.3rem;
-  display: block;
-  margin-top: 1rem;
-}
-
-.plan-features {
-  display: flex;
-  flex-direction: column;
-}
-
-.plan-feature {
-  margin: 0.6rem 0;
-  display: flex;
-  align-items: center;
-}
-.plan-feature i {
-  font-size: 1.8rem;
-  color: #242729;
-}
-.plan-feature:last-child {
-  margin-bottom: 1.5rem;
-}
-
-.plan-text {
-  color: #242729;
-  font-size: 1.5rem;
-  font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
-  margin-left: 1rem;
-}
-
-.card-footer {
-  position: absolute;
-  bottom: 3rem;
-  width: calc(100% - 6rem);
-}
-
-.btn-card {
-  font-size: 1.5rem;
-  font-family: "Source Sans Pro Bold", sans-serif;
-  font-weight: 700;
-  padding: 1.5rem 1rem;
-  display: block;
-}
-.btn-card:hover {
-  background-color: #0095ff;
-  color: #fff;
-}
-
-.teams-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 80%;
-  margin: 5rem auto 0;
-}
-.teams-footer img {
-  max-height: 24px;
-  width: initial;
-  margin-right: 1rem;
-}
-
-.teams-footer-item {
-  margin: 2rem;
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #bbc0c4;
-}
-
-.teams-footer-text {
-  display: inline-block;
-}
-
-/* End Teams*/
-/* Hire */
+/*----------------------------Hire----------------------------*/
 .for-hire {
   background-color: #f7f6f9;
   padding: 10rem 0;
 }
-.for-hire .container {
+.for-hire .bag {
   display: flex;
   justify-content: center;
   padding: 0 5rem;
@@ -607,8 +336,245 @@ img {
   margin-bottom: 3.5rem;
 }
 
-/* End Hire */
-/* Questions */
+/*---------------------Hire------------------------*/
+
+/*-------------------Teams--------------------*/
+.for-teams {
+  background-image: url("https://cdn.sstatic.net/Img/product/teams/illo-teams-pricing.svg?v=8afb8ac7c580");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #2c3034;
+  padding: 12rem 0;
+}
+.teams .optss {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.teams .opt {
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 0.7rem;
+}
+.teams .DesForOpt {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-left: 1rem;
+  color: #242729;
+}
+.teams .option-link {
+  color: #f48024;
+}
+
+.headOfTeamsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.titleOfTeamsSection {
+  font-size: 3.4rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: bold;
+  max-width: 55rem;
+}
+
+.decOfTeams {
+  font-size: 1.7rem;
+  max-width: 52.6rem;
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.plansOfTeams {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 10rem auto 0;
+}
+
+.card {
+  flex: 1 auto;
+  flex-basis: calc(33% - 4rem);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  border-radius: 0.7rem;
+  margin: 2rem;
+  position: relative;
+}
+
+.priceSection {
+  margin: 4rem 0;
+}
+
+.plansForTeams {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+}
+
+.card-basic .plansForTeams {
+  background-color: #c8ccd0;
+  color: #2f3337;
+}
+.card-basic .btn-card {
+  background-color: #d6d9dc;
+  color: #2f3337;
+}
+
+.card-business .plansForTeams {
+  background-color: #3c4146;
+  color: #fff;
+}
+.card-business .btn-card {
+  background-color: #3c4146;
+  color: #fff;
+}
+
+.card-enterprise .plansForTeams {
+  background-color: #2b2d6e;
+  color: #fff;
+}
+.card-enterprise .btn-card {
+  background-color: #2b2d6e;
+  color: #fff;
+}
+
+.card-most-used {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: -3.7rem;
+  padding: 1rem 2rem;
+  background-color: #e4e6e8;
+  color: #242729;
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro Bold", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #d6d9dc;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+.descriptionOfPlans {
+  color: #242729;
+  font-size: 1.5rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.parentPriceSec {
+  border-bottom: 1px solid #e4e6e8;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 3.4rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 900;
+  color: #242729;
+}
+
+.per {
+  color: #9199a1;
+  font-size: 1.3rem;
+  display: block;
+  margin-top: 1rem;
+}
+
+.offerings {
+  display: flex;
+  flex-direction: column;
+}
+
+.offeringPlan {
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+}
+.offeringPlan i {
+  font-size: 1.8rem;
+  color: #242729;
+}
+.offeringPlan:last-child {
+  margin-bottom: 1.5rem;
+}
+
+.simpleTXT {
+  color: #242729;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-left: 1rem;
+}
+
+.FooterOfThemainCardsec {
+  position: absolute;
+  bottom: 3rem;
+  width: calc(100% - 6rem);
+}
+
+.btn-card {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro Bold", sans-serif;
+  font-weight: 700;
+  padding: 1.5rem 1rem;
+  display: block;
+}
+.btn-card:hover {
+  background-color: #0095ff;
+  color: #fff;
+}
+
+.footer-teams-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 5rem auto 0;
+}
+.footer-teams-section img {
+  max-height: 24px;
+  width: initial;
+  margin-right: 1rem;
+}
+
+.per-section-teamsFooter {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #bbc0c4;
+}
+
+.teams-footer-text {
+  display: inline-block;
+}
+
+/*----------------- Teams---Ends----------------------*/
+
+/*-----------------Questions-----Ends----------------*/
 .content-questions {
   display: flex;
   justify-content: center;
@@ -763,115 +729,18 @@ img {
   font-weight: 400;
 }
 
-/* End Questions */
-/* Jobs */
-.jobs {
-  background-color: #e1ecf4;
-  padding: 10rem 0;
-}
+/* ---------------------------Questions---------------------*/
 
-.jobs-content {
-  padding: 0 2rem;
-}
-
-.jobs-title {
-  font-size: 3.4rem;
-  font-weight: 700;
-  font-family: "Roboto Slab Bold", serif;
-  margin-bottom: 2rem;
-}
-
-.jobs-body {
-  display: flex;
-  align-items: center;
-}
-
-.jobs-items {
-  display: flex;
-  flex-basis: 86%;
-}
-.jobs-items .column {
-  display: flex;
-  flex-basis: 50%;
-}
-.jobs-items .column:nth-child(even) {
-  margin-left: 3rem;
-}
-
-.jobs-item {
-  flex-basis: 50%;
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
-    0 3px 8px rgba(0, 0, 0, 0.09);
-  border-radius: 0.7rem;
-  padding: 1.8rem 2rem;
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  font-family: "Roboto Slab", serif;
-  font-weight: 400;
-}
-.jobs-item:nth-child(even) {
-  margin-left: 3rem;
-}
-
-.jobs-item-img {
-  width: 5rem;
-}
-
-.jobs-item-description {
-  margin-left: 2rem;
-}
-
-/* End Jobs */
-
-/* Media Queries */
+/*----------------------Media Queries-------------------------*/
 @media screen and (max-width: 1100px) {
-  .businesses .option {
+  .businesses .opt {
     flex-direction: column;
   }
-  .businesses .option-icon {
+  .businesses .optIcon {
     margin-bottom: 1.5rem;
   }
-  .businesses .option-icon img {
+  .businesses .optIcon img {
     max-width: 7.6rem;
-  }
-
-  .jobs-title {
-    text-align: center;
-  }
-
-  .jobs-body {
-    flex-direction: column;
-  }
-
-  .jobs-items {
-    flex-direction: column;
-  }
-  .jobs-items .column:nth-child(even) {
-    margin-left: initial;
-  }
-
-  .jobs-item {
-    margin-bottom: 3rem;
-  }
-
-  .hire-content {
-    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
-  }
-}
-@media screen and (max-width: 850px) {
-  .hire-content {
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-  }
-}
-@media screen and (max-width: 830px) {
-  .footer-content {
-    flex-wrap: wrap;
-  }
-
-  .social-media {
-    margin-bottom: 1rem;
   }
 }
 @media screen and (max-width: 810px) {
@@ -913,35 +782,35 @@ img {
     top: 5.2rem;
   }
 
-  .developers .options {
+  .developers .optss {
     justify-content: initial;
     flex-direction: column;
     max-width: initial;
     margin-top: 6rem;
   }
-  .developers .options > .option {
+  .developers .optss > .opt {
     margin-top: initial;
   }
-  .developers .option {
+  .developers .opt {
     max-width: 28rem;
     margin-bottom: 3rem;
     margin-top: initial;
   }
 
-  .businesses .options {
+  .businesses .optss {
     flex-direction: column;
   }
-  .businesses .option {
+  .businesses .opt {
     flex-direction: row;
     margin-bottom: 2.5rem;
     max-width: 35rem;
     margin-left: auto;
     margin-right: auto;
   }
-  .businesses .option-icon {
+  .businesses .optIcon {
     margin-bottom: 0;
   }
-  .businesses .option-icon img {
+  .businesses .optIcon img {
     max-width: initial;
   }
 
@@ -949,17 +818,17 @@ img {
     background-image: none;
   }
 
-  .teams-plan {
+  .plansOfTeams {
     width: 90%;
   }
-  .teams-plan .card {
+  .plansOfTeams .card {
     flex-basis: initial;
   }
-  .teams-plan .card:nth-child(2) {
+  .plansOfTeams .card:nth-child(2) {
     order: -1;
   }
 
-  .teams-footer {
+  .footer-teams-section {
     width: 90%;
   }
 
@@ -1019,6 +888,20 @@ img {
     text-align: center;
   }
 }
+@media screen and (max-width: 830px) {
+  .footer-content {
+    flex-wrap: wrap;
+  }
+
+  .social-media {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .questions-div-grid {
+    padding: 0;
+  }
+}
 @media screen and (max-width: 640px) {
   .nav-icon {
     padding: 0 1rem;
@@ -1049,7 +932,7 @@ img {
     background-image: url("https://cdn.sstatic.net/Img/home/illo-hero-small.svg?v=884735d21ea5");
   }
 
-  .section-title {
+  .titlesection {
     font-size: 3rem;
   }
 
@@ -1065,29 +948,29 @@ img {
     margin-left: initial;
   }
 
-  .section-title {
+  .titlesection {
     font-size: 2.3rem;
   }
 
-  .section-description {
+  .descriptionSec {
     font-size: 1.4rem;
     line-height: 2rem;
   }
 
-  .businesses .option-description {
+  .businesses .DesForOpt {
     font-size: 1.4rem;
     line-height: 2rem;
   }
 
-  .teams-head {
+  .headOfTeamsSection {
     padding: 0 6rem;
   }
 
-  .teams-title {
+  .titleOfTeamsSection {
     font-size: 2.3rem;
   }
 
-  .teams-description {
+  .decOfTeams {
     font-size: 1.4rem;
     line-height: 2rem;
   }
@@ -1095,18 +978,6 @@ img {
   .questions-div-grid {
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     padding: 0 9rem;
-  }
-
-  .jobs-title {
-    font-size: 2.3rem;
-  }
-
-  .jobs-items .column {
-    flex-direction: column;
-  }
-  .jobs-items .jobs-item {
-    margin-left: initial;
-    margin-bottom: 2rem;
   }
 
   .footer-icon {
@@ -1120,17 +991,9 @@ img {
   .footer-link {
     font-size: 1.1rem;
   }
+}
 
-  .for-hire .container {
-    padding: 0 3rem;
-  }
-}
-@media screen and (max-width: 500px) {
-  .questions-div-grid {
-    padding: 0;
-  }
-}
-/* End Media Queries */
+/*-----------------------Queries----------------------------------------*/
 /* Center the preloader */
 #preloader {
   display: flex;
@@ -1169,4 +1032,41 @@ img {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+@font-face {
+  font-family: "Source Sans Pro Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Source Sans Pro Bold Bold"), local("SourceSans Pro Bold-Bold"),
+    local("Source Sans Pro Bold 700"), local("SourceSans Pro Bold-700"),
+    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-bold-webfont.woff?v=f52ccc0bbce9")
+      format("woff");
+}
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
+    local("Roboto Slab 400"), local("RobotoSlab-400"), local("Roboto Slab"),
+    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-regular-webfont.woff?v=a75088a46d79")
+      format("woff");
+}
+@font-face {
+  font-family: "Roboto Slab Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Slab Bold Bold"), local("RobotoSlab Bold-Bold"),
+    local("Roboto Slab Bold 700"), local("RobotoSlab Bold-700"),
+    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-bold-webfont.woff?v=719d1c709127")
+      format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Sans Pro Regular"), local("SourceSans Pro-Regular"),
+    local("Source Sans Pro 400"), local("SourceSans Pro-400"),
+    local("Source Sans Pro"),
+    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-regular-webfont.woff?v=993db0ec4347")
+      format("woff");
 }
