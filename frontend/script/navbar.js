@@ -55,20 +55,16 @@ ques.addEventListener("input",()=>{
       search_hint.classList.remove("open");
     }, 50);
   
-  
-  
     let q = document.getElementById("ques").value
     console.log(q)
     
-  
-    let data = await fetch(`http://localhost:8000/questions/search/${q}`);
-    let res = await data.json();
-    console.log(res)
-    window.location.href="html/home.html"
-    document.getElementById("ques").value = ""
-    Maindiv.innerHTML = ""
-    renderData(res);
-    
+    localStorage.setItem("query",q)
+
+    if(window.location.href=="http://127.0.0.1:5500/frontend/html/home.html")
+    {
+      window.location.href="http://127.0.0.1:5500/frontend/html/home.html"
+    }
+    else window.location.href="html/home.html"
   
   });
 })
