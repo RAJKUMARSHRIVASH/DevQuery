@@ -64,7 +64,7 @@ ques.addEventListener("input",()=>{
     {
       window.location.href="http://127.0.0.1:5500/frontend/html/home.html"
     }
-    else window.location.href="html/home.html"
+    else window.location.href="home.html"
   
   });
 })
