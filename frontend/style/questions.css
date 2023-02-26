@@ -204,6 +204,15 @@
   margin-right: 15px;
   color: gray;
 }
+.likebtn{
+  border: 1px solid transparent;
+  font-size: 36px;
+}
+.likebtn:hover{
+  cursor: pointer;
+  color: #f48024;
+  border: 1px solid #f48024;
+}
 
 @media screen and (max-width: 810px) {
   #leftdiv {

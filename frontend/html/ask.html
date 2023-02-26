@@ -99,7 +99,7 @@
         let token = localStorage.getItem("token");
         try {
           let post_question = await fetch(
-            "http://localhost:8000/questions/addquestion",
+            "https://devquery.onrender.com/questions/addquestion",
             {
               method: "POST",
               headers: {
@@ -112,7 +112,7 @@
           const res = await post_question.json();
           if (res._id) {
             localStorage.setItem("question_id", res._id);
-            location.assign("questions.html");
+            location.assign("./questions.html");
           }
         } catch (error) {
           console.log(error);
