@@ -58,7 +58,7 @@ let navbar = () => {
       </div>
       <div class="nav-links">
         <ul>
-          <li><a href="../html/users.html" id="users-page">users</a></li>
+          <li><a href="../html/users.html" id="users-page">Users</a></li>
           <li><a href="../html/home.html" id="in_quetions">Questions</a></li>
           <li><a href="../html/ask.html" id="in_ask">Ask</a></li>
         </ul>
