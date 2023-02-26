@@ -94,3 +94,44 @@
         box-shadow: none;
     }
 }
+
+/* Center the preloader */
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    scrollbar-width: none;
+  }
+  
+  /* Rotate the loading icon */
+  .preloader-icon {
+    animation: spin 1s infinite linear;
+    font-size: 4rem;
+    color: #f48024;
+  }
+  
+  /* Rotate the preloader */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Hide the preloader when the page is loaded */
+  .loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  }
+  

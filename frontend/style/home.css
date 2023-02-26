@@ -1,267 +1,292 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background-color: #f3dddd; */
+#in_login {
+  margin-right: 0px;
 }
-
 a {
-    text-decoration: none;
-    color: black;
-    margin-right: 15px
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
 }
 
 #home {
-    display: flex;
-    padding: 5%
+  display: flex;
+  padding: 5%;
 }
 
 #rightdiv {
-    background-color: rgb(251, 243, 213);
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    border-radius: 5px;
-    height: 100%;
-    margin-left: 0px
+  background-color: rgb(251, 243, 213);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 5px;
+  height: 100%;
+  margin-left: 0px;
 }
 
 #askques {
-    background-color: rgb(10, 149, 255);
-    color: white;
-    border: 0px;
-    width: 100px;
-    height: 40px;
-    border-radius: 2px;
-    margin-top: -10px;
-    margin-bottom: 10px;
+  background-color: rgb(10, 149, 255);
+  color: white;
+  border: 0px;
+  width: 100px;
+  height: 40px;
+  border-radius: 2px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-button {
-    background-color: rgb(10, 149, 255);
-    color: white;
-    width: 80px;
-    height: 30px;
-    border: 0px;
-    margin-right: 5px;
+#latest,
+#old,
+#hot {
+  background-color: rgb(10, 149, 255);
+  color: white;
+  width: 80px;
+  height: 30px;
+  border: 0px;
+  margin-right: 5px;
 }
 
-button:hover {
-    background-color: rgb(233, 121, 30);
-    cursor: pointer;
+#latest:hover,
+#old:hover,
+#hot:hover {
+  background-color: rgb(233, 121, 30);
+  cursor: pointer;
 }
 
 #askques:hover {
-    background-color: rgb(233, 121, 30);
-    cursor: pointer;
+  background-color: rgb(233, 121, 30);
+  cursor: pointer;
 }
 
 #rightdiv h4 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .icons,
 #sidebyside,
 .qtab {
-    display: flex;
+  display: flex;
 }
 
 #sidebyside {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #table {
-    display: flex;
-    margin-left: 400px
+  display: flex;
+  margin-left: 400px;
 }
 
 .icons img {
-    width: 20px;
-    margin-left: 10px;
-    margin-right: 7px
+  width: 20px;
+  margin-left: 10px;
+  margin-right: 7px;
 }
 
 #leftdiv {
-    position: fixed;
-    width: 14%;
-    /* border:1px solid black; */
-    height: 50%;
-    text-align: left;
-    margin: auto;
-    margin-left: -40px;
-
-
+  position: fixed;
+  width: 14%;
+  border-right: double;
+  height: 100%;
+  text-align: left;
+  margin: auto;
+  margin-left: -40px;
+  margin-top: -14px;
 }
 
 #leftdiv a {
-    text-decoration: none;
-    color: black;
-    margin-right: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    margin-left: 10px;
-    /* border:1px solid black; */
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  margin-left: 10px;
+  /* border:1px solid black; */
 }
 
 #leftdiv p {
+  color: black;
 
-    color: black;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
 }
-
 
 #rightdiv h4,
 #rightdiv a,
 #renderhere p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
 }
 
 #table,
 .box {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #renderdata {
-    width: 60%;
-    margin-right: 30px;
-    margin-left: 160px
+  width: 60%;
+  margin-right: 30px;
+  margin-left: 160px;
 }
 
 #list li,
 #leftdiv p {
-    margin-left: 40px;
-    margin-bottom: 8px;
-    margin-top: 5px
-        /* border:1px solid black; */
+  margin-left: 40px;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  /* border:1px solid black; */
 }
 
-
 .questions {
-    margin-left: 40px
+  margin-left: 40px;
 }
 
 .vote {
-    margin-left: 20px
+  margin-left: 20px;
 }
 
 .heading,
 .des {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .heading:hover {
-    cursor: pointer
+  cursor: pointer;
 }
 
 .qbox {
-    width: 70%;
-
+  width: 70%;
 }
 
 .abox {
-    width: 30%;
-    text-align: center;
+  width: 30%;
+  text-align: center;
 }
 
 .box {
-    /* border:1px solid black; */
-    margin-bottom: 10px;
-    margin-top: 10px
+  /* border:1px solid black; */
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-
 .vertical {
-    border-left: 1px solid black;
-    height: 200%;
-    position: absolute;
-    margin-left: -470px;
-    left: 50%;
+  border-left: 1px solid black;
+
+  position: absolute;
+  margin-left: -470px;
+  left: 50%;
 }
 
 #leftdiv a:hover {
-    color: rgb(233, 121, 30);
+  color: rgb(233, 121, 30);
 }
 
 @media screen and (max-width: 1033px) {
+  #leftdiv,
+  #rightdiv {
+    display: none;
+  }
 
-    #leftdiv,
-    #rightdiv {
-        display: none
-    }
+  .vertical {
+    display: none;
+  }
 
-    .vertical {
-        display: none
-    }
+  #renderdata {
+    width: 100%;
+    margin-left: -20px;
+  }
 
-    #renderdata {
-        width: 100%;
-        margin-left: -20px
-    }
+  #heading {
+    margin-top: 30px;
+  }
 
-    #heading {
-        margin-top: 30px
-    }
-
-    #askques {
-        margin-right: 50px
-    }
-
-
+  #askques {
+    margin-right: 50px;
+  }
 }
 
-
-
 @media screen and (max-width: 830px) {
-
-    #leftdiv,
-    #rightdiv {
-        display: none
-    }
+  #leftdiv,
+  #rightdiv {
+    display: none;
+  }
 }
 
-
 @media screen and (max-width: 830px) {
+  #leftdiv,
+  #rightdiv {
+    display: none;
+  }
 
-    #leftdiv,
-    #rightdiv {
-        display: none
-    }
+  #renderdata {
+    width: 100%;
+    margin-left: -20px;
+  }
 
-    #renderdata {
-        width: 100%;
-        margin-left: -20px
-    }
-
-    #heading {
-        margin-top: 30px
-    }
+  #heading {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 810px) {
-
-    #leftdiv,
-    #rightdiv {
-        display: none
-    }
+  #leftdiv,
+  #rightdiv {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 640px) {
+  #leftdiv,
+  #rightdiv {
+    display: none;
+  }
 
-    #leftdiv,
-    #rightdiv {
-        display: none
-    }
-
-    #table {
-        margin-left: -20px
-    }
+  #table {
+    margin-left: -20px;
+  }
 }
 
 @media screen and (max-width: 390px) {
+  #leftdiv,
+  #rightdiv {
+    display: none;
+  }
+}
 
-    #leftdiv,
-    #rightdiv {
-        display: none
-    }
+/* Center the preloader */
+#preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+/* Rotate the loading icon */
+.preloader-icon {
+  animation: spin 1s infinite linear;
+  font-size: 4rem;
+  color: #f48024;
+}
+
+/* Rotate the preloader */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide the preloader when the page is loaded */
+.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }

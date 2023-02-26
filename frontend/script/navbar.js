@@ -49,6 +49,10 @@ const searching = document.querySelector('#searching');
 
 searching.addEventListener('click', async function (event) {
 
+  setTimeout(() => {
+    search_hint.classList.remove("open");
+  }, 50);
+
   let ques = document.getElementById("ques").value
   console.log(ques)
   document.getElementById("ques").value = ""
@@ -59,6 +63,7 @@ searching.addEventListener('click', async function (event) {
 
   Maindiv.innerHTML = ""
   renderData(res);
+  
 
 });
 
