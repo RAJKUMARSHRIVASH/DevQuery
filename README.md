@@ -36,7 +36,6 @@ Some work Planning and documentation are here:-
 		Google Oauth
 		Github Oauth
 		Fb Oauth
-		Role-based access control
 		Blacklisting with MongoDB (optional)
 		Cookies (optional)
 
@@ -44,7 +43,7 @@ Some work Planning and documentation are here:-
 	
 		Frontend
 		Listing all the questions from MongoDB
-		Tags for searching and filtering
+		Tags or keywords for searching and filtering
 
 	Main answer question page:- 
 	
@@ -56,5 +55,8 @@ Some work Planning and documentation are here:-
 	
 		Message box to send msg or to discuss with a specific user
 		Try to send notifications.
+
+Reponsive page design
+
 
 
