@@ -19,37 +19,38 @@ Group members :-
 
 Some work Planning and documentation are here:-
 
-Dev Hub
-Workflow
-Landing page:- Dheeraj
-Nav bar (searching box working)
-Dummy page - (HTML, CSS, JS  / React) Front end Only
-Footer
-			
-Login Signup page:-  Chandan
-Frontend
-Normal login signup
-Google Oauth
-Github Oauth
-Fb Oauth
-Role-based access control
-Blacklisting with MongoDB (optional)
-Redis (optional)
-Cookies (optional)
+	Dev Hub
 
-Home or (question page) Dhaanu
-Frontend
-Listing all the questions from MongoDB
-Tags for searching and filtering
+	Workflow
+	
+	Landing page:- Dheeraj
+		Nav bar (searching box working)
+		Dummy page - (HTML, CSS, JS  / React) Front-end Only
+		Footer
 
- Main answer question page:- Chetan
-Landed by question page
-Front-end chatting app, comment, section, tags, formatting 
-Backend web socket, MongoDB
+	Login Signup page:-  Chandan
+		Frontend
+		Normal login signup
+		Google Oauth
+		Github Oauth
+		Fb Oauth
+		Role-based access control
+		Blacklisting with MongoDB (optional)
+		Redis (optional)
+		Cookies (optional)
 
-users page (all the users will be shown):- Raj
-Message box to send msg or to discuss with a specific user
-Nodemailer
-Try to send notifications.
+	Home or (question page) Dhaanu
+		Frontend
+		Listing all the questions from MongoDB
+		Tags for searching and filtering
+
+	 Main answer question page:- Chetan
+		Landed by question page
+		Front-end chatting app, comment, section, tags, formatting 
+		Backend web socket, MongoDB
+
+	users page (all the users will be shown):- Raj
+		Message box to send msg or to discuss with a specific user
+		Try to send notifications.
 
 
