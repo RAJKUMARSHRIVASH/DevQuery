@@ -23,13 +23,13 @@ Some work Planning and documentation are here:-
 
 	Workflow
 	
-	Landing page:- 
+	Landing page:- Dheeraj Pal
 	
 		Nav bar (searching box working)
 		page - (HTML, CSS, JS  / React) Front-end Only
 		Footer
 
-	Login Signup page:-  
+	Login Signup page:-  Chandan Kumar
 	
 		Frontend
 		Normal login signup
@@ -39,19 +39,19 @@ Some work Planning and documentation are here:-
 		Blacklisting with MongoDB (optional)
 		Cookies (optional)
 
-	Home or (question page) 
+	Home or (question page) :- Dhaanu I
 	
 		Frontend
 		Listing all the questions from MongoDB
 		Tags or keywords for searching and filtering
 
-	Main answer question page:- 
+	Main answer question page:- (ask page) Chetan Ram
 	
 		Landed by question page
 		Front-end chatting app, comment, section, tags, formatting 
 		Backend web socket, MongoDB
 
-	users page (all the users will be shown):- 
+	users page (all the users will be shown):- Raj Kumar Sen
 	
 		Message box to send msg or to discuss with a specific user
 		Try to send notifications.
