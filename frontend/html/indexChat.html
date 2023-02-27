@@ -5,7 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f584623432.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="../style/chat.css">
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="../style/nav.css" />
+    <!----------------------------- navbar css --------------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+    <link rel="shortcut icon" href="../favicon/mini.logo.png" />
+
     <title>Chat Server</title>
 
 </head>
@@ -29,7 +37,8 @@
                 <div class="form-control">
                     <label for="room">Room</label>
                     <select name="room" id="room">
-                        <option value="one-to-one"></option>
+                        <option value="Private">Private</option>
+                        <option value="Group">Group</option>
                         <!-- <option value="JS201">JS201</option>
                         <option value="DSA421">DSA421</option>
                         <option value="CSBT">CSBT</option>
@@ -40,5 +49,7 @@
             </form>
         </main>
     </div>
+<script type="module" src="../script/navbar.js"></script>
+
 </body>
 </html>

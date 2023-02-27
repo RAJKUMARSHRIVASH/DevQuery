@@ -19,9 +19,10 @@
 }
 
 body {
+	background-image: url("../imgs/rm222batch2-mind-03.jpg");
 	background-color: #ffffff;
 	opacity: 1;
-	background-image: radial-gradient(#7B2869 0.5px, #ffffff 0.5px);
+	/* background-image: radial-gradient(#7B2869 0.5px, #ffffff 0.5px); */
 	background-size: 10px 10px;
 	/* transform: translate(0%, 20%);	 */
 }
