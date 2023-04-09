@@ -41,6 +41,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 - Users page
 - User authentication with Google OAuth and GitHub OAuth
 - Users can post questions
+- Users can't answer his own question
 - Users can comment on other questions
 - Like functionality for posts
 - Users can search for a particular question from any page
