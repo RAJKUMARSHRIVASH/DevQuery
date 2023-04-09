@@ -1,3 +1,4 @@
+
 # DevQuery - Clone of Stack Overflow
 ![Logo](https://www.linkpicture.com/q/DevQuery.logo_1.png)
 ## it's question-answer website that unites programmers.
@@ -34,7 +35,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 - Users page
 - Questions page
 - Ask page
-- User authentication with Google OAuth, GitHub OAuth, and Facebook OAuth
+- User authentication with Google OAuth and GitHub OAuth
 - Users can post questions
 - Users can comment on other questions
 - Like functionality for posts
