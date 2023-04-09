@@ -84,7 +84,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 
 ![App Screenshot](https://www.linkpicture.com/q/Screenshot-78_1.png)
 
-## Demo
+## Visit the site
 
 https://rococo-rolypoly-a926ac.netlify.app/
 
