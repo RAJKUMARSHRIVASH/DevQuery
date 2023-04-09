@@ -35,7 +35,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 
 
 - Landing page
-- Login and signup pages
+- Signup and Login pages
 - Users page
 - Questions page
 - Ask page
