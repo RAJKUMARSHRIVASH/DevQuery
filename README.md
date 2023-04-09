@@ -36,9 +36,9 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 
 - Landing page
 - Signup and Login pages
-- Users page
-- Questions page
 - Ask page
+- Questions page
+- Users page
 - User authentication with Google OAuth and GitHub OAuth
 - Users can post questions
 - Users can comment on other questions
