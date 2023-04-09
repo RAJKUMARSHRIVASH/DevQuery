@@ -29,6 +29,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 </div>
 
 <br/>
+<br/>
 
 ![App Screenshot](https://www.linkpicture.com/q/stack.png)
 
