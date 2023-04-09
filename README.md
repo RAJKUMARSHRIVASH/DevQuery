@@ -98,7 +98,7 @@ https://rococo-rolypoly-a926ac.netlify.app/
 
 - [@RAJKUMARSHRIVASH](https://github.com/RAJKUMARSHRIVASH)
 - [@chandan1506](https://github.com/chandan1506)
-- [@Dhaanu I](https://github.com/DhaanuI)
+- [@Dhaanu-I](https://github.com/DhaanuI)
 - [@Chetandabli](https://github.com/chetandabli)
 - [@DheerajPal](https://github.com/Dheeraj-pal)
 
