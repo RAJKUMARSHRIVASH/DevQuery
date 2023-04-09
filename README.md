@@ -82,9 +82,9 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 
 <img width="90%" src="https://www.linkpicture.com/q/Screenshot-77_5.png" />
 
-![App Screenshot](https://www.linkpicture.com/q/Screenshot-76_2.png)
+<img width="90%" src="https://www.linkpicture.com/q/Screenshot-76_2.png" />
 
-![App Screenshot](https://www.linkpicture.com/q/Screenshot-78_1.png)
+<img width="90%" src="https://www.linkpicture.com/q/Screenshot-78_1.png" />
 
 ## Visit the site
 
