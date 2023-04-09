@@ -1,8 +1,6 @@
 
 <h1 align="center">DevQuery - Stack Overflow Clone</h1>
-<!-- ![Logo](https://www.linkpicture.com/q/DevQuery.logo_1.png) -->
 <p align="center"><img  src="https://www.linkpicture.com/q/DevQuery.logo_1.png"></p>
- 
  <h2> it's question-answer website that unites programmers all over the globe.</h2>
 <br>
 
