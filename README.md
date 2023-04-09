@@ -94,9 +94,9 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 https://rococo-rolypoly-a926ac.netlify.app/
 
 
- ## Author
+ ## Authors
 
-- [@RAJKUMARSHRIVASH](https://github.com/RAJKUMARSHRIVASH)
+- [@shanukajain](https://github.com/RAJKUMARSHRIVASH)
 - [@chandan1506](https://github.com/chandan1506)
 - [@Dhaanu I](https://github.com/DhaanuI)
 - [@Chetandabli](https://github.com/chetandabli)
