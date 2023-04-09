@@ -49,7 +49,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 
 
 
-## Run Locally
+## installation
 
 ### Clone the project
 
