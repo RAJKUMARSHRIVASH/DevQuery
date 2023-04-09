@@ -57,12 +57,6 @@ This is a Stack Overflow clone project where at ask page you can post your quest
   npm install
 ```
 
-### Start the server
-
-```bash
-  npm run server
-```
-
 ### Runs the project in the development mode 
 
 ```bash
