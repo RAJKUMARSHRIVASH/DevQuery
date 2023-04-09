@@ -1,7 +1,7 @@
 
 # DevQuery
 ![Logo](https://www.linkpicture.com/q/DevQuery.logo_1.png)
-## it's question-answer website that unites programmers.
+## it's question-answer website that unites programmers all over the globe.
 
 
 This is a Stack Overflow clone project where at ask page you can post your questions and at questions page you can answer and see the list of questions while you can't answer of your own question and at users page admin can see the list of users listed in the website.
