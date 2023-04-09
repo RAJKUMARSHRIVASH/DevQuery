@@ -78,9 +78,9 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 
 ## Project Highlights
 
-![App Screenshot](https://www.linkpicture.com/q/Screenshot-72.png)
+<img width="90%" src="https://www.linkpicture.com/q/Screenshot-72.png" />
 
-![App Screenshot](https://www.linkpicture.com/q/Screenshot-77_5.png)
+<img width="90%" src="https://www.linkpicture.com/q/Screenshot-77_5.png" />
 
 ![App Screenshot](https://www.linkpicture.com/q/Screenshot-76_2.png)
 
