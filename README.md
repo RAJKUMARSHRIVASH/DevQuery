@@ -1,5 +1,5 @@
 
-# DevQuery - Clone of Stack Overflow
+# DevQuery
 ![Logo](https://www.linkpicture.com/q/DevQuery.logo_1.png)
 ## it's question-answer website that unites programmers.
 
