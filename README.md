@@ -4,7 +4,7 @@
 ## it's question-answer website that unites programmers all over the globe.
 
 
-This is a Stack Overflow clone project where at ask page you can post your questions, at questions page you can see the list of questions and can answer the questions and while you can't answer of your own question and at users page admin can see the list of users listed in the website.
+This is a Stack Overflow clone project where at ask page you can post your questions, at questions page you can see the list of questions and can answer the questions with the restriction of not answering your own question and at users page admin can see the list of users listed in the website.
 
 
 
