@@ -79,14 +79,18 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 `port`
 
 
-## Project Highlights
+<h2 align="center"> Project Highlights</h2>
 
+## 1. Signup Page
 <img width="90%" src="https://www.linkpicture.com/q/Screenshot-72.png" />
 
+## 2. Ask Page
 <img width="90%" src="https://www.linkpicture.com/q/Screenshot-77_5.png" />
 
+## 3. Questions Page
 <img width="90%" src="https://www.linkpicture.com/q/Screenshot-76_2.png" />
 
+## 4. Users Page 
 <img width="90%" src="https://www.linkpicture.com/q/Screenshot-78_1.png" />
 
 ## Demo
