@@ -61,20 +61,15 @@ ques.addEventListener("input",()=>{
     
     localStorage.setItem("query",q)
 
-    if(window.location.href=="https://rococo-rolypoly-a926ac.netlify.app/html/home.html")
+    if(window.location.href=="https://loquacious-frangipane-3d96a5.netlify.app/")
     {
-      window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
+      window.location.href="https://loquacious-frangipane-3d96a5.netlify.app/html/home.html"
     }
-    else if(window.location.href=="https://rococo-rolypoly-a926ac.netlify.app/index.html")
+    else if(window.location.href=="https://loquacious-frangipane-3d96a5.netlify.app/index.html")
     {
-      window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
-    }
-    else if(window.location.href=="https://rococo-rolypoly-a926ac.netlify.app")
-    {
-      window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
+      window.location.href="https://loquacious-frangipane-3d96a5.netlify.app/html/home.html"
     }
     else window.location.href="home.html" 
-  
   });
 })
 
