@@ -53,7 +53,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 ### Clone the project
 
 ```bash
- https://github.com/RAJKUMARSHRIVASH/native-minister-9066.git
+ https://github.com/RAJKUMARSHRIVASH/DevQuery
 ```
 
 ### Install dependencies
