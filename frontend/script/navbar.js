@@ -44,32 +44,30 @@ search_btn.addEventListener("click", () => {
 
 
 
-const ques=document.querySelector('#ques')
+const ques = document.querySelector('#ques')
 const searching = document.querySelector('#searching');
-ques.addEventListener("input",()=>{
+ques.addEventListener("input", () => {
 
 
-  searching.style.display="block";
+  searching.style.display = "block";
   searching.addEventListener('click', async function (event) {
 
     setTimeout(() => {
       search_hint.classList.remove("open");
     }, 50);
-  
+
     let q = document.getElementById("ques").value
     // console.log(q)
-    
-    localStorage.setItem("query",q)
 
-    if(window.location.href=="https://loquacious-frangipane-3d96a5.netlify.app/")
-    {
-      window.location.href="https://loquacious-frangipane-3d96a5.netlify.app/html/home.html"
+    localStorage.setItem("query", q)
+
+    if (window.location.href == "https://devquery.netlify.app/") {
+      window.location.href = "https://devquery.netlify.app/html/home.html"
     }
-    else if(window.location.href=="https://loquacious-frangipane-3d96a5.netlify.app/index.html")
-    {
-      window.location.href="https://loquacious-frangipane-3d96a5.netlify.app/html/home.html"
+    else if (window.location.href == "https://devquery.netlify.app/index.html") {
+      window.location.href = "https://devquery.netlify.app/html/home.html"
     }
-    else window.location.href="home.html" 
+    else window.location.href = "home.html"
   });
 })
 
@@ -84,17 +82,17 @@ function ifUser() {
   let userName = localStorage.getItem("username");
   let loginbtn = document.getElementById("in_login");
   let signupbtn = document.getElementById("in_signup");
-  if(userName){
+  if (userName) {
     name.innerText = userName.split(" ").slice(0, 1);
     loginbtn.innerText = "Log out"
     signupbtn.style.display = "none"
-    if(loginbtn.innerText== "Log out"){
-      loginbtn.addEventListener("click",()=>{
-        localStorage.clear("username")        
+    if (loginbtn.innerText == "Log out") {
+      loginbtn.addEventListener("click", () => {
+        localStorage.clear("username")
       })
     }
-  }else{
-    parentName.innerHTML=""
+  } else {
+    parentName.innerHTML = ""
   }
 }
 ifUser()
