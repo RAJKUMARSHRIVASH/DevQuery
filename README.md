@@ -53,7 +53,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 ### Clone the project
 
 ```bash
- https://github.com/RAJKUMARSHRIVASH/DevQuery
+https://github.com/DhaanuI/DevQuery/
 ```
 
 ### Install dependencies
@@ -95,7 +95,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 
 ## Demo
 
-https://rococo-rolypoly-a926ac.netlify.app/
+https://devquery.netlify.app/
 
 
  ## Authors
