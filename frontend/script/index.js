@@ -124,3 +124,15 @@ function durationSlider() {
     }
   }, 3000);
 }
+
+// Assuming the URL is: https://example.com/?name=John&age=25
+
+// Get the URL search parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+// Get the value of a specific query parameter
+const name = urlParams.get('name');
+console.log(name);
+
+const token = urlParams.get('token');
+console.log(token);

@@ -1,5 +1,4 @@
 
-
 let loginForm = document.querySelector("form")
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault()
