@@ -16,11 +16,11 @@ try{
         })
         const res = await register_request.json() 
         if(register_request.ok){
-        alert(res.message)
+            await swal(`${res.message}`,"success")
         window.location.href ="./login.html"
         }else{
         
-           alert(res.message)
+            await swal(`${res.message}`,"","error")
         }
 } catch (error) {
         console.log(error)
