@@ -94,7 +94,7 @@ document.getElementById("leave-btn").addEventListener("click",(e)=>{
     const leaveRoom = confirm("Are you sure you want to leave the chatRoom?");
  
     if(leaveRoom){
-        window.location.href = "./index.html";
+        window.location.href = "../index.html";
 
     }
 
