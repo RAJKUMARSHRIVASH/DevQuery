@@ -1,4 +1,4 @@
-window.onload = ()=>{
+window.onload = () => {
   document.getElementById("in_nav_icon").href = "./index.html"
   document.getElementById("in_logo").src = "./favicon/DevQuery.logo.png"
   document.getElementById("in_mini_logo").src = "./favicon/mini.logo.png"
@@ -131,8 +131,10 @@ function durationSlider() {
 const urlParams = new URLSearchParams(window.location.search);
 
 // Get the value of a specific query parameter
-const name = urlParams.get('name');
-console.log(name);
-
+const username = urlParams.get('name');
 const token = urlParams.get('token');
-console.log(token);
+if(username && token){
+
+  localStorage.setItem("token", token)
+  localStorage.setItem("username", username)
+}
