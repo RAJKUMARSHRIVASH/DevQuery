@@ -95,6 +95,20 @@ function ifUser() {
     parentName.innerHTML = ""
   }
 }
-ifUser()
+
+ // Assuming the URL is: https://example.com/?name=John&age=25
+
+// Get the URL search parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+// Get the value of a specific query parameter
+const username = urlParams.get('name');
+const token = urlParams.get('token');
+if(username && token){
  
+  localStorage.setItem("token", token)
+  localStorage.setItem("username", username)
+  ifUser()
+}
+
 
