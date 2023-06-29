@@ -18,12 +18,15 @@ let loginForm = document.querySelector("form")
             const res = await login_request.json()
             console.log(res) 
             if(res.message == "login successfull"){
-                alert(res.message)
+                await  swal(
+                    "Login Sucessfull",
+                    "success"
+                  );
                 localStorage.setItem("token", res.token)
                 localStorage.setItem("username", res.username)
             window.location.href = "./home.html"
             }else{
-                alert("plz login again")
+                await swal("plz Login Again","","error");
             }
             
         } catch (error) {
