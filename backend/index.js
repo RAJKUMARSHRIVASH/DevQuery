@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-
+const jwt = require("jsonwebtoken");
 //-----------dotenv-----------//
 require('dotenv').config();
 
@@ -35,15 +35,16 @@ app.get('/auth/google',
 
 app.get('/auth/google/callback',
     passport.authenticate('google', {
-        successRedirect: "https://devquery.netlify.app/",
+        // successRedirect: `https://devquery.netlify.app/`,
         failureRedirect: 'https://devquery.netlify.app/html/login.html',
         session: false
     }),
     function (req, res) {
         // Successful authentication, redirect home.
-        console.log(req.user)
-        res.json({ "user": req.user })
 
+        const token = jwt.sign({ userID: req.user._id, name: req.user.name }, process.env.key)
+
+        res.redirect(`https://devquery.netlify.app?name=${req.user.name}&token=${token}`)
     });
 
 //----------------Facebook Oauth----------//
@@ -65,10 +66,10 @@ app.get("/auth/facebook/callback",
         res.redirect("https://devquery.netlify.app/")
     });
 
-app.get("/",(req,res)=>{
-    app.use(express.static(path.join(__dirname,"../","frontend")));
-    res.sendFile(path.resolve(__dirname,"../","frontend","index.html"));
-})
+// app.get("/",(req,res)=>{
+//     app.use(express.static(path.join(__dirname,"../","frontend")));
+//     res.sendFile(path.resolve(__dirname,"../","frontend","index.html"));
+// })
 
 //---------server------------//
 app.listen(process.env.port, async () => {
