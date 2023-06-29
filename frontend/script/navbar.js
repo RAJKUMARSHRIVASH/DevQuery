@@ -61,17 +61,17 @@ ques.addEventListener("input",()=>{
     
     localStorage.setItem("query",q)
 
-    if(window.location.href=="https://rococo-rolypoly-a926ac.netlify.app/html/home.html")
+    if(window.location.href=="https://devquery.netlify.app/html/home.html")
     {
-      window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
+      window.location.href="https://devquery.netlify.app/html/home.html"
     }
-    else if(window.location.href=="https://rococo-rolypoly-a926ac.netlify.app/index.html")
+    else if(window.location.href=="https://devquery.netlify.app/index.html")
     {
-      window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
+      window.location.href="https://devquery.netlify.app/html/home.html"
     }
-    else if(window.location.href=="https://rococo-rolypoly-a926ac.netlify.app")
+    else if(window.location.href=="https://devquery.netlify.app")
     {
-      window.location.href="https://rococo-rolypoly-a926ac.netlify.app/html/home.html"
+      window.location.href="https://devquery.netlify.app/html/home.html"
     }
     else window.location.href="home.html" 
   
