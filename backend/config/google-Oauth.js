@@ -21,7 +21,7 @@ passport.use(new GoogleStrategy({
     // console.log(payload)
     let x = await UserModel.findOne({email});
     if(x){
-      return cb(null, payload);
+      return cb(null, x);
     }
    const user = new UserModel({
     name,
@@ -29,7 +29,7 @@ passport.use(new GoogleStrategy({
     password: uuidv4()
    })
    await user.save();
-    return cb(null, payload);
+    return cb(null, user);
   }
   
 ));
