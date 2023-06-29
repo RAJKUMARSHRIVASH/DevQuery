@@ -94,9 +94,13 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 <img width="90%" src="https://www.linkpicture.com/q/Screenshot-78_1.png" />
 
 ## Demo
-
-https://rococo-rolypoly-a926ac.netlify.app/
-
+  ```
+https://devquery.netlify.app/
+```
+## backend
+```
+https://devquery.onrender.com/
+```
 
  ## Authors
 
