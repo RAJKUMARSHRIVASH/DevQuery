@@ -53,7 +53,7 @@ githubRoute.get("/github",async (req, res) => {
     //   "token":Token
     // }
   res.cookie("token",Token,"username",userDetails.name)
-  res.redirect("https://rococo-rolypoly-a926ac.netlify.app/")
+  res.redirect("https://devquery.netlify.app/");
   
 })
 

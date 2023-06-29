@@ -13,7 +13,7 @@ console.log(username, room)
 document.getElementById("user-name").innerText=`${username}`;
 
 
-const socket = io("http://localhost:8080/", { transports: ["websocket"] });
+const socket = io("https://devquery.onrender.com/", { transports: ["websocket"] });
 
 socket.emit("joinRoom", { username, room });
 
