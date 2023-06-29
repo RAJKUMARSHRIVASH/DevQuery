@@ -53,7 +53,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 ### Clone the project
 
 ```bash
- https://github.com/RAJKUMARSHRIVASH/DevQuery
+https://github.com/DhaanuI/DevQuery/
 ```
 
 ### Install dependencies
@@ -94,6 +94,7 @@ This is a Stack Overflow clone project where at ask page you can post your quest
 <img width="90%" src="https://www.linkpicture.com/q/Screenshot-78_1.png" />
 
 ## Demo
+
   ```
 https://devquery.netlify.app/
 ```
@@ -101,6 +102,7 @@ https://devquery.netlify.app/
 ```
 https://devquery.onrender.com/
 ```
+
 
  ## Authors
 
